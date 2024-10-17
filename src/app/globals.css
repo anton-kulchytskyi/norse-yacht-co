@@ -2,7 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@font-face {
+  font-family: 'Beautiful_ES';
+  src: url('../public/fonts/Beautiful_ES.ttf');
+}
+
+@layer base {
+  h1 {
+    @apply text-7xl xl:text-8xl 2xl:text-9xl 3xl:text-[194px] font-bEs text-secondary-100 mb-20;
+    line-height: 20%;
+  }
+  h2 {
+    @apply text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl font-baiJ text-primary font-bold;
+  }
+  h3 {
+    @apply text-6xl font-baiJ;
+  }
+  h4 {
+    @apply text-4xl font-baiJ;
+  }
+  h5 {
+    @apply text-7xl font-bEs;
+  }
+  p {
+    @apply text-base;
+  }
+  a {
+    @apply text-white text-lg font-semibold;
+  }
+  button {
+    @apply text-lg;
+  }
+}
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -24,4 +57,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */

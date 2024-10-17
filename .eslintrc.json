@@ -1,3 +1,41 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next",
+    "prettier"
+  ],
+  "rules": {
+    "prefer-const": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "unused-imports/no-unused-imports": "error",
+    "react/jsx-indent": ["error", 2],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
+    ],
+    "no-console": "warn",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "no-else-return": "error",
+    "no-lonely-if": "error",
+    "no-unneeded-ternary": "error",
+    "computed-property-spacing": ["error", "never"],
+    "@stylistic/indent": ["error", 2],
+    "eol-last": ["error", "always"],
+    "object-curly-spacing": ["error", "always", { "objectsInObjects": true }]
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "@stylistic", "unused-imports"]
 }
