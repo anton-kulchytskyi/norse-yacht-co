@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 
 import User from '@/components/SvgIconsComponents/User';
@@ -89,7 +91,9 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
-      <NavbarModals />
+      <Suspense fallback={<p>loading ...</p>}>
+        <NavbarModals />
+      </Suspense>
     </>
   );
 };
