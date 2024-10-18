@@ -9,5 +9,5 @@ export interface ButtonProps extends Clickable {
 
 export interface LinkProps extends Clickable {
   href: string;
-  variant?: 'button' | 'nav' | 'footer' | 'text' | 'icon';
+  variant?: 'button' | 'nav' | 'footer' | 'text' | 'icon' | 'menu';
 }

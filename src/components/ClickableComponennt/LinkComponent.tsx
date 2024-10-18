@@ -16,6 +16,9 @@ const LinkComponent = ({ text, href, variant }: LinkProps) => {
       linkStyle =
         'text-black content-center hover:underline hover:text-secondary-100 transition-colors';
       break;
+    case 'menu':
+      linkStyle = 'text-black content-center';
+      break;
     case 'footer':
       linkStyle = 'hover:text-secondary-100 hover:underline transition';
       break;
