@@ -1,9 +1,17 @@
 'use client';
 import { ReactNode, useEffect } from 'react';
 
-type ModalWrapperProps = { onClose: () => void; children: ReactNode, styling?: string; };
+type ModalWrapperProps = {
+  onClose: () => void;
+  children: ReactNode;
+  styling?: string;
+};
 
-const ModalWrapper = ({ onClose, children, styling = '' }: ModalWrapperProps) => {
+const ModalWrapper = ({
+  onClose,
+  children,
+  styling = '',
+}: ModalWrapperProps) => {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -21,7 +29,6 @@ const ModalWrapper = ({ onClose, children, styling = '' }: ModalWrapperProps) =>
       onClick={onClose}
     >
       <div
-        // className="bg-white p-6 rounded-lg relative max-w-md w-full mx-4"
         className={styling}
         onClick={(e) => e.stopPropagation()}
       >
