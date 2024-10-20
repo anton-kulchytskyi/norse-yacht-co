@@ -1,4 +1,5 @@
 'use client';
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
@@ -16,7 +17,9 @@ const NavbarLinks = () => {
     <>
       <ul className="flex justify-start">
         <li className="mr-3 flex xl:hidden">
-          <MenuAndCloseButton modal={modal} />
+          <Suspense fallback={<p>loading ...</p>}>
+            <MenuAndCloseButton modal={modal} />
+          </Suspense>
         </li>
         {navbarLeftLinks.map((link, i) => (
           <li
