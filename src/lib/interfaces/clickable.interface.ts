@@ -1,5 +1,6 @@
 interface Clickable {
   text: string | JSX.Element;
+  variant: 'linkButton' | 'nav' | 'footer' | 'text' | 'icon' | 'menu' | 'close' | 'logo';
 }
 
 export interface ButtonProps extends Clickable {
@@ -9,5 +10,5 @@ export interface ButtonProps extends Clickable {
 
 export interface LinkProps extends Clickable {
   href: string;
-  variant?: 'button' | 'nav' | 'footer' | 'text' | 'icon' | 'menu';
+  // variant?: 'button' | 'nav' | 'footer' | 'text' | 'icon' | 'menu';
 }

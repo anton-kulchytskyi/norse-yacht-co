@@ -1,60 +1,27 @@
-import ClickableComponent from '../ClickableComponennt/ClickableComponent';
+import { mobileMenuLinks } from '@/lib/links/mobileMenuLinks';
+import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import ModalWrapper from './ModalWrapper';
 
 type MobileMenuModalProps = {
   onClose: () => void;
 };
 
-type LinkProps = {
-  title: string | JSX.Element;
-  path: string;
-  variant?: 'button' | 'nav' | 'footer' | 'text' | 'icon' | 'menu';
-};
-
-const mobileMenuLinks: LinkProps[] = [
-  {
-    title: 'Yachts',
-    path: '/catalogue',
-    variant: 'menu',
-  },
-  {
-    title: 'How it Works?',
-    path: '/how-it-works',
-    variant: 'menu',
-  },
-  {
-    title: 'Split currency / EUR',
-    path: '',
-    variant: 'menu',
-  },
-  {
-    title: 'Contacts',
-    path: '/contacts',
-    variant: 'menu',
-  },
-  {
-    title: 'Follow us',
-    path: '',
-    variant: 'menu',
-  },
-];
-
 const MobileMenuModal = ({ onClose }: MobileMenuModalProps) => {
-  const wrapperStyle = 'bg-white relative w-full h-full';
+  const contentStyle = 'bg-white relative w-full h-full pt-16 xs:pt-28';
   return (
     <ModalWrapper
       onClose={onClose}
-      styling={wrapperStyle}
+      contentStyle={contentStyle}
     >
-      <ul className="pt-16">
+      <ul>
         {mobileMenuLinks.map((link, i) => (
           <li
             key={i}
-            className="text-center"
+            className="text-center pb-8"
           >
             <ClickableComponent
-              text={link.title}
-              href={link.path}
+              text={link.text}
+              href={link.href}
               variant={link.variant}
             />
           </li>

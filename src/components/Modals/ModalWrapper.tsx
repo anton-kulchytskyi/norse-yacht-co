@@ -4,13 +4,13 @@ import { ReactNode, useEffect } from 'react';
 type ModalWrapperProps = {
   onClose: () => void;
   children: ReactNode;
-  styling?: string;
+  contentStyle?: string;
 };
 
 const ModalWrapper = ({
   onClose,
   children,
-  styling = '',
+  contentStyle = '',
 }: ModalWrapperProps) => {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -29,15 +29,15 @@ const ModalWrapper = ({
       onClick={onClose}
     >
       <div
-        className={styling}
+        className={contentStyle}
         onClick={(e) => e.stopPropagation()}
       >
-        <button
+        {/* <button
           className="absolute top-2 right-2 text-gray-600 text-4xl"
           onClick={onClose}
         >
           &times;
-        </button>
+        </button> */}
         {children}
       </div>
     </div>
