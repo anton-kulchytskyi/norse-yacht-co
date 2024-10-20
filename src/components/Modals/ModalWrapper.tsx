@@ -32,12 +32,6 @@ const ModalWrapper = ({
         className={contentStyle}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* <button
-          className="absolute top-2 right-2 text-gray-600 text-4xl"
-          onClick={onClose}
-        >
-          &times;
-        </button> */}
         {children}
       </div>
     </div>
