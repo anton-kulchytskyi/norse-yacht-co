@@ -1,7 +1,8 @@
 interface Clickable {
   text: string | JSX.Element;
   variant:
-    | 'linkButton'
+    | 'linkButtonPrimary'
+    | 'linkButtonSecondary'
     | 'nav'
     | 'footer'
     | 'text'

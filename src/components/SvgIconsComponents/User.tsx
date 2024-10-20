@@ -9,10 +9,10 @@ const User = () => (
     </g>
     <text
       x="60%"
-      y="80%"
+      y="85%"
       textAnchor="middle"
       fontSize="18"
-      className="hidden xl:flex fill-black hover:fill-secondary-100 hover:underline transition"
+      className="hidden xl:flex font-medium fill-black hover:fill-secondary-100 hover:underline transition"
     >
       My account
     </text>

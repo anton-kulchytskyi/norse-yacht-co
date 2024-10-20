@@ -18,7 +18,7 @@ const HeroSection = () => {
         <ClickableComponent
           text="View Gallery"
           href="/catalogue"
-          variant="linkButton"
+          variant="linkButtonPrimary"
         />
       </div>
     </div>

@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Beautiful_ES';
-  src: url('../public/fonts/Beautiful_ES.ttf');
-}
-
 @layer base {
   h1 {
     @apply text-7xl xl:text-8xl 2xl:text-9xl 3xl:text-[194px] font-bEs text-secondary-100 mb-20;

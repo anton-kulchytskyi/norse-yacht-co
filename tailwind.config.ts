@@ -12,9 +12,9 @@ const config: Config = {
         white: '#ffffff',
       },
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
-        baiJ: ['Bai_Jamjuree', 'sans-serif'],
-        bEs: ['Beautiful_ES', 'cursive'],
+        roboto: 'var(--font-roboto)',
+        baiJ: 'var(--font-baiJ)',
+        bEs: 'var(--font-bEs)',
       },
       colors: {
         primary: '#4d6575',
