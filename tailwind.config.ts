@@ -37,6 +37,7 @@ const config: Config = {
         warning: '#f7e64d',
       },
       screens: {
+        xs: '320px',
         '3xl': '1920px',
       },
     },
