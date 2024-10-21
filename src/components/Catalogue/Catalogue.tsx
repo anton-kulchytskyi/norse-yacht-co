@@ -1,7 +1,7 @@
-import React from 'react';
+import CatalogueList from './CatalogueList';
 
 const Catalogue = () => {
-  return <div>This is page with yachs cards</div>;
+  return <CatalogueList />;
 };
 
 export default Catalogue;
