@@ -4,9 +4,13 @@ import { LinkProps } from '@/lib/interfaces/clickable.interface';
 const LinkComponent = ({ text, href, variant }: LinkProps) => {
   let linkStyle = '';
   switch (variant) {
-    case 'linkButton':
+    case 'linkButtonPrimary':
       linkStyle =
-        'bg-primary rounded-[56px] py-2.5 px-10 text-lg font-medium hover:bg-secondary-100 transition-colors';
+        'bg-primary rounded-[56px] py-2.5 px-10 text-lg font-medium hover:bg-secondary-100 active:bg-secondary-110 transition-colors';
+      break;
+    case 'linkButtonSecondary':
+      linkStyle =
+        'bg-secondary-100 rounded-[56px] py-2.5 px-10 text-lg font-medium hover:bg-secondary-110 active:bg-transparent active:text-secondary-110 active:border-2 active:border-secondary-110 active:border-solid transition';
       break;
     case 'text':
       linkStyle =
@@ -14,7 +18,7 @@ const LinkComponent = ({ text, href, variant }: LinkProps) => {
       break;
     case 'nav':
       linkStyle =
-        'text-black content-center hover:underline hover:text-secondary-100 transition-colors';
+        'text-black font-medium content-center hover:underline hover:text-secondary-100 transition-colors';
       break;
     case 'menu':
       linkStyle = 'text-black';
