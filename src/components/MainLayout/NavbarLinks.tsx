@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
-import Logo from '@/components/SvgIconsComponents/Logo';
+import NavbarFooterLogo from '@/components/SvgIconsComponents/NavbarFooterLogo';
 
 import { navbarLeftLinks, navbarRightLinks } from '@/lib/links/navbarLinks';
 
@@ -36,7 +36,7 @@ const NavbarLinks = () => {
       </ul>
       <span className="flex justify-center">
         <ClickableComponent
-          text={<Logo />}
+          text={<NavbarFooterLogo navbar />}
           href="/"
           variant="logo"
         />
