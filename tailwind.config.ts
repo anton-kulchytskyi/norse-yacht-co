@@ -40,6 +40,9 @@ const config: Config = {
         xs: '320px',
         '3xl': '1920px',
       },
+      boxShadow: {
+        custom: '10px 10px 5px 0px rgba(209, 213, 219, 1)',
+      },
     },
   },
   plugins: [],

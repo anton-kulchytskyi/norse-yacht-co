@@ -14,7 +14,7 @@
     @apply text-6xl font-baiJ;
   }
   h4 {
-    @apply text-4xl font-baiJ;
+    @apply text-3xl xl:text-[40px] text-primary font-semibold font-baiJ;
   }
   h5 {
     @apply text-7xl font-bEs;

@@ -26,6 +26,9 @@ const LinkComponent = ({ text, href, variant }: LinkProps) => {
     case 'footer':
       linkStyle = 'hover:text-secondary-100 hover:underline transition';
       break;
+    case 'imgContainer':
+      linkStyle = 'w-full';
+      break;
     default:
       linkStyle = '';
   }
