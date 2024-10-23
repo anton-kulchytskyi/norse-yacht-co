@@ -6,7 +6,7 @@ const LinkComponent = ({ text, href, variant }: LinkProps) => {
   switch (variant) {
     case 'linkButtonPrimary':
       linkStyle =
-        'bg-primary rounded-[56px] py-2.5 px-10 text-lg font-medium hover:bg-secondary-100 active:bg-secondary-110 transition-colors';
+        'bg-primary text-white rounded-[56px] py-2.5 px-10 text-lg font-medium hover:bg-secondary-100 active:bg-secondary-110 transition-colors';
       break;
     case 'linkButtonSecondary':
       linkStyle =
@@ -18,7 +18,7 @@ const LinkComponent = ({ text, href, variant }: LinkProps) => {
       break;
     case 'nav':
       linkStyle =
-        'text-black font-medium content-center hover:underline hover:text-secondary-100 transition-colors';
+        'content-center hover:underline hover:text-secondary-100 transition-colors';
       break;
     case 'menu':
       linkStyle = 'text-black';
@@ -28,6 +28,13 @@ const LinkComponent = ({ text, href, variant }: LinkProps) => {
       break;
     case 'imgContainer':
       linkStyle = 'w-full';
+      break;
+    case 'yachtName':
+      linkStyle =
+        'font-baiJ text-2xl sm:text-4xl hover:text-secondary-100 hover:underline';
+      break;
+    case 'icon':
+      linkStyle = '';
       break;
     default:
       linkStyle = '';

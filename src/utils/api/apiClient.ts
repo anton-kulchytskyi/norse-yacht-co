@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { CustomError } from '../error/CustomError';
 import { createHeaders } from './createHeaders';
 
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
@@ -25,7 +26,7 @@ async function request<T>(
     );
 
     if (!responseBody.ok) {
-      throw new Error(`Network response was not ok: ${responseBody.json()}`);
+      throw new CustomError(responseBody.statusText, responseBody.status);
     }
 
     return responseBody.json();

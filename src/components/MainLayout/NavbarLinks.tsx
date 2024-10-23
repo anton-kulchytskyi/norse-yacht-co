@@ -24,7 +24,7 @@ const NavbarLinks = () => {
         {navbarLeftLinks.map((link, i) => (
           <li
             key={i}
-            className="mr-3 last:mr-0 hidden xl:flex"
+            className="mr-9 last:mr-0 hidden xl:flex"
           >
             <ClickableComponent
               text={link.text}
@@ -41,11 +41,11 @@ const NavbarLinks = () => {
           variant="logo"
         />
       </span>
-      <ul className="flex justify-end">
+      <ul className="flex justify-end highlight-second">
         {navbarRightLinks.map((link, i) => (
           <li
             key={i}
-            className={`ml-3 first:ml-0 ${link.variant === 'nav' && 'hidden xl:flex'}`}
+            className={`ml-9 first:ml-0 ${link.variant === 'nav' && 'hidden xl:flex'}`}
           >
             <ClickableComponent
               text={link.text}

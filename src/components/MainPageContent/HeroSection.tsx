@@ -4,7 +4,7 @@ import ClickableComponent from '@/components/ClickableComponennt/ClickableCompon
 
 const HeroSection = () => {
   return (
-    <div className="relative h-screen -mt-32">
+    <div className="relative h-screen">
       <Image
         src={hero}
         alt="Background Image"
