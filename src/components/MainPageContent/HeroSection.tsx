@@ -16,10 +16,11 @@ const HeroSection = () => {
         <h2>Select Your Dream</h2>
         <h1>Yacht Now</h1>
         <ClickableComponent
-          text="View Gallery"
           href="/catalogue"
           variant="linkButtonPrimary"
-        />
+        >
+          View Gallery
+        </ClickableComponent>
       </div>
     </div>
   );

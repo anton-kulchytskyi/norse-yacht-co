@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { LinkProps } from '@/lib/interfaces/clickable.interface';
 
-const LinkComponent = ({ text, href, variant }: LinkProps) => {
+const LinkComponent = ({ href, variant, children }: LinkProps) => {
   let linkStyle = '';
   switch (variant) {
     case 'linkButtonPrimary':
@@ -45,7 +45,7 @@ const LinkComponent = ({ text, href, variant }: LinkProps) => {
       href={href}
       className={linkStyle}
     >
-      {text}
+      {children}
     </Link>
   );
 };

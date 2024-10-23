@@ -20,10 +20,11 @@ const MobileMenuModal = ({ onClose }: MobileMenuModalProps) => {
             className="text-center pb-8"
           >
             <ClickableComponent
-              text={link.text}
               href={link.href}
               variant={link.variant}
-            />
+            >
+              {link.text}
+            </ClickableComponent>
           </li>
         ))}
       </ul>

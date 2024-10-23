@@ -16,17 +16,19 @@ const MenuAndCloseButton = ({ modal }: MenuAndCloseButtonProps) => {
     <>
       {modal === 'mobileMenu' ? (
         <ClickableComponent
-          text={<Close />}
           type="button"
           onClick={closeModal}
           variant="close"
-        />
+        >
+          <Close />
+        </ClickableComponent>
       ) : (
         <ClickableComponent
-          text={<Menu />}
           href="?modal=mobileMenu"
           variant="menu"
-        />
+        >
+          <Menu />
+        </ClickableComponent>
       )}
     </>
   );
