@@ -12,9 +12,9 @@ const config: Config = {
         white: '#ffffff',
       },
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
-        baiJ: ['Bai_Jamjuree', 'sans-serif'],
-        bEs: ['Beautiful_ES', 'cursive'],
+        roboto: 'var(--font-roboto)',
+        baiJ: 'var(--font-baiJ)',
+        bEs: 'var(--font-bEs)',
       },
       colors: {
         primary: '#4d6575',
@@ -37,7 +37,11 @@ const config: Config = {
         warning: '#f7e64d',
       },
       screens: {
+        xs: '320px',
         '3xl': '1920px',
+      },
+      boxShadow: {
+        custom: '10px 10px 5px 0px rgba(209, 213, 219, 1)',
       },
     },
   },

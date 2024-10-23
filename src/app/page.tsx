@@ -5,7 +5,6 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-
       <FeaturedYachts />
     </>
   );

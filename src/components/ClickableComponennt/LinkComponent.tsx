@@ -4,9 +4,13 @@ import { LinkProps } from '@/lib/interfaces/clickable.interface';
 const LinkComponent = ({ text, href, variant }: LinkProps) => {
   let linkStyle = '';
   switch (variant) {
-    case 'button':
+    case 'linkButtonPrimary':
       linkStyle =
-        'bg-primary rounded-[56px] py-2.5 px-10 text-lg font-medium hover:bg-secondary-100 transition-colors';
+        'bg-primary text-white rounded-[56px] py-2.5 px-10 text-lg font-medium hover:bg-secondary-100 active:bg-secondary-110 transition-colors';
+      break;
+    case 'linkButtonSecondary':
+      linkStyle =
+        'bg-secondary-100 rounded-[56px] py-2.5 px-10 text-lg font-medium hover:bg-secondary-110 active:bg-transparent active:text-secondary-110 active:border-2 active:border-secondary-110 active:border-solid transition';
       break;
     case 'text':
       linkStyle =
@@ -14,10 +18,23 @@ const LinkComponent = ({ text, href, variant }: LinkProps) => {
       break;
     case 'nav':
       linkStyle =
-        'text-black content-center hover:underline hover:text-secondary-100 transition-colors';
+        'content-center hover:underline hover:text-secondary-100 transition-colors';
+      break;
+    case 'menu':
+      linkStyle = 'text-black';
       break;
     case 'footer':
       linkStyle = 'hover:text-secondary-100 hover:underline transition';
+      break;
+    case 'imgContainer':
+      linkStyle = 'w-full';
+      break;
+    case 'yachtName':
+      linkStyle =
+        'font-baiJ text-2xl sm:text-4xl hover:text-secondary-100 hover:underline';
+      break;
+    case 'icon':
+      linkStyle = '';
       break;
     default:
       linkStyle = '';

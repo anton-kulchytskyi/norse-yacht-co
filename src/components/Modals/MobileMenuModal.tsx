@@ -1,3 +1,5 @@
+import { mobileMenuLinks } from '@/lib/links/mobileMenuLinks';
+import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import ModalWrapper from './ModalWrapper';
 
 type MobileMenuModalProps = {
@@ -5,10 +7,26 @@ type MobileMenuModalProps = {
 };
 
 const MobileMenuModal = ({ onClose }: MobileMenuModalProps) => {
+  const contentStyle = 'bg-white relative w-full h-full pt-16 xs:pt-28';
   return (
-    <ModalWrapper onClose={onClose}>
-      <h2 className="text-xl font-bold">Menu for mobile</h2>
-      <p>Add style and logic </p>
+    <ModalWrapper
+      onClose={onClose}
+      contentStyle={contentStyle}
+    >
+      <ul>
+        {mobileMenuLinks.map((link, i) => (
+          <li
+            key={i}
+            className="text-center pb-8"
+          >
+            <ClickableComponent
+              text={link.text}
+              href={link.href}
+              variant={link.variant}
+            />
+          </li>
+        ))}
+      </ul>
     </ModalWrapper>
   );
 };
