@@ -1,6 +1,6 @@
 import { Yacht } from '@/lib/interfaces/yacht.interface';
 import { apiClient } from '@/utils/api/apiClient';
-import CatalogueCard from './CatalogueCard';
+import Card from './Card/Card';
 
 const CatalogueList = async () => {
   const yachts: Yacht[] = await apiClient.getAllYachts('/yachts');
@@ -13,9 +13,9 @@ const CatalogueList = async () => {
         </div>
         <div>Filter & Sorting</div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-5 md:px-16">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 px-5 md:px-16">
         {yachts.map((yacht) => (
-          <CatalogueCard
+          <Card
             key={yacht.yacht_id}
             yacht={yacht}
           />

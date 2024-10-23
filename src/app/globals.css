@@ -2,19 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @layer base {
   h1 {
-    @apply text-7xl xl:text-8xl 2xl:text-9xl 3xl:text-[194px] font-bEs text-secondary-100 mb-20;
+    @apply text-7xl sm:text-8xl xl:text-9xl 2xl:text-[194px] font-bEs text-secondary-100 mb-20;
     line-height: 20%;
   }
   h2 {
-    @apply text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl font-baiJ text-primary font-bold;
+    @apply font-baiJ text-4xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[130px] text-primary font-bold;
   }
   h3 {
     @apply text-6xl font-baiJ;
   }
   h4 {
-    @apply text-3xl xl:text-[40px] text-primary font-semibold font-baiJ;
+    @apply font-baiJ font-semibold text-3xl xl:text-[40px] text-primary;
   }
   h5 {
     @apply text-7xl font-bEs;
@@ -23,11 +29,15 @@
     @apply text-base;
   }
   a {
-    @apply text-white text-lg font-semibold;
+    @apply text-lg font-medium;
   }
   button {
     @apply text-lg;
   }
+}
+
+.highlight-second li:nth-child(2) {
+  @apply ml-2;
 }
 
 /* :root {

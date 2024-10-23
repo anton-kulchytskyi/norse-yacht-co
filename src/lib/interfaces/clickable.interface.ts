@@ -10,7 +10,8 @@ interface Clickable {
     | 'menu'
     | 'close'
     | 'logo'
-    | 'imgContainer';
+    | 'imgContainer'
+    | 'yachtName';
 }
 
 export interface ButtonProps extends Clickable {

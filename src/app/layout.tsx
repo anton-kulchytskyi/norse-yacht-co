@@ -21,7 +21,7 @@ export default function RootLayout({
       lang="en"
       className={`${roboto.variable} ${baiJ.variable} ${bEs.variable}`}
     >
-      <body className="bg-white text-black font-roboto">
+      <body className="bg-white text-black font-roboto max-w-screen-3xl mx-auto">
         <Navbar />
         {children}
         <Footer />
