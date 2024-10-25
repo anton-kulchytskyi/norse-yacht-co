@@ -9,10 +9,11 @@ function isPropsForLinkElement(
 }
 
 const ClickableComponent = (props: ButtonProps | LinkProps) => {
+  const { children } = props;
   if (isPropsForLinkElement(props)) {
-    return <LinkComponent {...props} />;
+    return <LinkComponent {...props}>{children}</LinkComponent>;
   }
-  return <ButtonComponent {...props} />;
+  return <ButtonComponent {...props}>{children}</ButtonComponent>;
 };
 
 export default ClickableComponent;

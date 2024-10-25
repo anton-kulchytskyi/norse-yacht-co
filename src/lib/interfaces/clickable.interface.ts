@@ -1,5 +1,6 @@
 interface Clickable {
-  text: string | JSX.Element | Promise<JSX.Element>;
+  children?: React.ReactNode;
+  // text?: string | JSX.Element | Promise<JSX.Element>;
   variant:
     | 'linkButtonPrimary'
     | 'linkButtonSecondary'
@@ -11,7 +12,8 @@ interface Clickable {
     | 'close'
     | 'logo'
     | 'imgContainer'
-    | 'yachtName';
+    | 'yachtName'
+    | 'currency';
 }
 
 export interface ButtonProps extends Clickable {
