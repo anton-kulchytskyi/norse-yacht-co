@@ -4,13 +4,13 @@ import { ReactNode, useEffect } from 'react';
 type ModalWrapperProps = {
   onClose: () => void;
   children: ReactNode;
-  contentStyle?: string;
+  // contentStyle?: string;
 };
 
 const ModalWrapper = ({
   onClose,
   children,
-  contentStyle = '',
+  // contentStyle = '',
 }: ModalWrapperProps) => {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -28,12 +28,7 @@ const ModalWrapper = ({
       className="fixed z-10 inset-0 bg-transparent flex items-center justify-center"
       onClick={onClose}
     >
-      <div
-        className={contentStyle}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {children}
-      </div>
+      {children}
     </div>
   );
 };

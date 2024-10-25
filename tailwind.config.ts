@@ -43,6 +43,20 @@ const config: Config = {
       boxShadow: {
         custom: '10px 10px 5px 0px rgba(209, 213, 219, 1)',
       },
+      animation: {
+        'scale-up': 'scale-up .3s ease',
+        'slide-in-left': 'slide-in-left .3s ease forwards',
+      },
+      keyframes: {
+        'scale-up': {
+          '0%': { transform: 'scale(.6)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        'slide-in-left': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
     },
   },
   plugins: [],

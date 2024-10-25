@@ -2,7 +2,11 @@ import { LinkProps } from '@/lib/interfaces/clickable.interface';
 import Heart from '@/components/SvgIconsComponents/Heart';
 import User from '@/components/SvgIconsComponents/User';
 
-export const navbarLeftLinks: LinkProps[] = [
+interface NavbarLinksArrays extends LinkProps {
+  text: string | JSX.Element;
+}
+
+export const navbarLeftLinks: NavbarLinksArrays[] = [
   {
     text: 'Yachts',
     href: '/catalogue',
@@ -15,7 +19,7 @@ export const navbarLeftLinks: LinkProps[] = [
   },
 ];
 
-export const navbarRightLinks: LinkProps[] = [
+export const navbarRightLinks: NavbarLinksArrays[] = [
   {
     text: <Heart />,
     href: '/',

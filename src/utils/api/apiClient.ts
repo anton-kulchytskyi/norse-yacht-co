@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Yacht } from '@/lib/interfaces/yacht.interface';
 import { CustomError } from '../error/CustomError';
 import { createHeaders } from './createHeaders';
 
@@ -38,6 +39,9 @@ async function request<T>(
 }
 
 export const apiClient = {
-  getAllYachts: <T>(url: string) => request<T>(url),
+  getAllYachts: async (url: string) => {
+    const data = await request<{ yachts: Yacht[] }>(url);
+    return data.yachts;
+  },
   getYachtById: <T>(url: string) => request<T>(url),
 };

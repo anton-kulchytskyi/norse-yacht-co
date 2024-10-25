@@ -1,6 +1,10 @@
 import { LinkProps } from '@/lib/interfaces/clickable.interface';
 
-export const mobileMenuLinks: LinkProps[] = [
+interface MobileMenuLinksArray extends LinkProps {
+  text: string | JSX.Element;
+}
+
+export const mobileMenuLinks: MobileMenuLinksArray[] = [
   {
     text: 'Yachts',
     href: '/catalogue',

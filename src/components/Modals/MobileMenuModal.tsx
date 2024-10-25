@@ -7,23 +7,20 @@ type MobileMenuModalProps = {
 };
 
 const MobileMenuModal = ({ onClose }: MobileMenuModalProps) => {
-  const contentStyle = 'bg-white relative w-full h-full pt-16 xs:pt-28';
   return (
-    <ModalWrapper
-      onClose={onClose}
-      contentStyle={contentStyle}
-    >
-      <ul>
+    <ModalWrapper onClose={onClose}>
+      <ul className="bg-white relative w-full h-full pt-16 xs:pt-28 animate-slide-in-left">
         {mobileMenuLinks.map((link, i) => (
           <li
             key={i}
             className="text-center pb-8"
           >
             <ClickableComponent
-              text={link.text}
               href={link.href}
               variant={link.variant}
-            />
+            >
+              {link.text}
+            </ClickableComponent>
           </li>
         ))}
       </ul>

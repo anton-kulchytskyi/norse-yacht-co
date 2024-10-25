@@ -18,10 +18,11 @@ const CustomNotFoundPage = () => {
         Oops, something went wrong...
       </p>
       <ClickableComponent
-        text={'Return to the main page'}
         href="/"
         variant="linkButtonSecondary"
-      />
+      >
+        Return to the main page
+      </ClickableComponent>
     </div>
   );
 };

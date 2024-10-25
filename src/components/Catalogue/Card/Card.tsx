@@ -3,7 +3,7 @@ import { Yacht } from '@/lib/interfaces/yacht.interface';
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import Heart from '@/components//SvgIconsComponents/Heart';
 import CardImg from './CardImg';
-import YachtName from './YachtName';
+// import YachtName from './YachtName';
 import YachtPrice from './YachtPrice';
 import TopRightLabel from './TopRightLabel';
 
@@ -30,10 +30,11 @@ const CatalogueCard = async ({ yacht }: CatalogueCardProps) => {
     <div className="hover:shadow-custom hover:rounded-lg hover:scale-105 transition ease duration-1000 group">
       <div className="relative block w-full h-96">
         <ClickableComponent
-          text={<CardImg keyImg={yacht_main_image_key} />}
           href={`/catalogue/${yacht_id}`}
           variant="imgContainer"
-        />
+        >
+          <CardImg keyImg={yacht_main_image_key} />
+        </ClickableComponent>
         <span className="absolute top-6 right-8 text-white uppercase leading-7 font-medium px-4 bg-secondary-100 rounded-[2rem] rounded-tr-sm rounded-bl-sm">
           <TopRightLabel
             yachtTop={yacht_top}
@@ -42,29 +43,29 @@ const CatalogueCard = async ({ yacht }: CatalogueCardProps) => {
         </span>
         <span className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition ease duration-1000">
           <ClickableComponent
-            text="See Detail"
             href={`/catalogue/${yacht_id}?name=${yacht_make}`}
             variant="linkButtonPrimary"
-          />
+          >
+            See Detail
+          </ClickableComponent>
         </span>
       </div>
       <div className="flex justify-between mb-2">
         <ClickableComponent
-          text={
-            <YachtName
-              yachtMake={yacht_make}
-              yachtModel={yacht_model}
-            />
-          }
           href={`/catalogue/${yacht_id}?name=${yacht_make}`}
           variant="yachtName"
-        />
+        >
+          <span>{yacht_make}</span>
+          <br />
+          <span>{yacht_model}</span>
+        </ClickableComponent>
         <span className="mx-4 my-4">
           <ClickableComponent
-            text={<Heart />}
             href=""
             variant="icon"
-          />
+          >
+            <Heart />
+          </ClickableComponent>
         </span>
       </div>
       <YachtPrice
