@@ -8,18 +8,15 @@ type CurrencyModalProps = {
 };
 
 const CurrencyModal = ({ onClose }: CurrencyModalProps) => {
-  const contentStyle =
-    'absolute top-10 right-10 bg-white px-4 py-4 rounded-2xl animate-scale-up';
   return (
     <ModalWrapper
       onClose={onClose}
-      contentStyle={contentStyle}
     >
-      <ul>
+      <ul className="absolute top-20 right-44 bg-white px-4 py-4 rounded-2xl animate-scale-up">
         {currencyData.map((currency) => (
           <li
             key={currency.currencyName}
-            className="mb-4 last:mb-0 "
+            className="mb-4 last:mb-0"
           >
             <ClickableComponent
               type="button"

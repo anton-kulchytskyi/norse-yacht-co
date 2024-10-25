@@ -10,6 +10,7 @@ const NavbarModals = () => {
   const closeModal = () => {
     router.back();
   };
+
   return (
     <>
       {modal === 'currency' && <CurrencyModal onClose={closeModal} />}

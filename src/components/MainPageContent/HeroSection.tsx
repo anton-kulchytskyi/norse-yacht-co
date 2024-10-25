@@ -4,13 +4,13 @@ import ClickableComponent from '@/components/ClickableComponennt/ClickableCompon
 
 const HeroSection = () => {
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen -mt-[54px] md:-mt-[62px] xl:-mt-[70px]">
       <Image
         src={hero}
         alt="Background Image"
-        layout="fill"
-        objectFit="cover"
+        className="object-cover w-full h-full"
         quality={100}
+        priority
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h2>Select Your Dream</h2>

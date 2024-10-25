@@ -27,7 +27,7 @@ const LinkComponent = ({ href, variant, children }: LinkProps) => {
       linkStyle = 'hover:text-secondary-100 hover:underline transition';
       break;
     case 'imgContainer':
-      linkStyle = 'w-full';
+      linkStyle = 'relative block w-full h-full';
       break;
     case 'yachtName':
       linkStyle =
