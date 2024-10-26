@@ -4,10 +4,10 @@ import Map from '@/components/Map/Map';
 const styles = {
   mainHeader: '',
   subHeader: 'text-2xl',
-  container: 'my-5'
+  container: 'my-5',
+  emailLink: 'underline',
+  mapContainer: 'w-full',
 };
-
-const API_KEY = process.env.NEXT_PUBLIC_MAP_API_KEY;
 
 const ContactsPage = () => {
   return (
@@ -33,11 +33,11 @@ const ContactsPage = () => {
       </article>
       <article className={styles.container}>
         <h2 className={styles.subHeader}>E-mail address</h2>
-        <a href="mailto:sales@norseyacht.com" className={'underline'}>
+        <a href="mailto:sales@norseyacht.com" className={styles.emailLink}>
           sales@norseyacht.com
         </a>
       </article>
-      <div className={'w-full'}>
+      <div className={styles.mapContainer}>
         <Map/>
       </div>
     </section>
