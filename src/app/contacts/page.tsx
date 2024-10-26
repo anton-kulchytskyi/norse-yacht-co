@@ -1,10 +1,13 @@
 import React from 'react';
+import Map from '@/components/Map/Map';
 
 const styles = {
   mainHeader: '',
   subHeader: 'text-2xl',
   container: 'my-5'
 };
+
+const API_KEY = process.env.NEXT_PUBLIC_MAP_API_KEY;
 
 const ContactsPage = () => {
   return (
@@ -30,10 +33,13 @@ const ContactsPage = () => {
       </article>
       <article className={styles.container}>
         <h2 className={styles.subHeader}>E-mail address</h2>
-        <a href="mailto:sales@norseyacht.com">
+        <a href="mailto:sales@norseyacht.com" className={'underline'}>
           sales@norseyacht.com
         </a>
       </article>
+      <div className={'w-full'}>
+        <Map/>
+      </div>
     </section>
   );
 };
@@ -42,3 +48,4 @@ export default ContactsPage;
 
 // вынести данные для заполнения
 // header не занимает место в дереве,
+// добавить google map api
