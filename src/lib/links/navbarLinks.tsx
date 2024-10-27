@@ -31,7 +31,7 @@ export const navbarRightLinks: NavbarLinksArrays[] = [
     variant: 'icon',
   },
   {
-    text: 'Split currency / EUR',
+    text: 'Split currency',
     href: '?modal=currency',
     variant: 'nav',
   },

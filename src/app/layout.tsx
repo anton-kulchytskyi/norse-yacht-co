@@ -5,6 +5,7 @@ import Navbar from '@/components/MainLayout/Navbar';
 import Footer from '@/components/MainLayout/Footer';
 
 import './globals.css';
+import { CurrencyProvider } from '@/utils/context/CurrencyContext';
 
 export const metadata: Metadata = {
   title: 'Norse Yacht Co | Selling yachts from Norway',
@@ -22,9 +23,11 @@ export default function RootLayout({
       className={`${roboto.variable} ${baiJ.variable} ${bEs.variable}`}
     >
       <body className="bg-white text-black font-roboto max-w-screen-3xl mx-auto">
-        <Navbar />
-        {children}
-        <Footer />
+        <CurrencyProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </CurrencyProvider>
       </body>
     </html>
   );
