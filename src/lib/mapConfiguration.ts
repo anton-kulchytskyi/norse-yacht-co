@@ -1,10 +1,3 @@
-export const center = {
-  lat: 53.296253536288454,
-  lng: -6.135119093254048,
-}
-
-export const libraries = ['places'];
-
 export const defaultOptions = {
   panControl: true,
   zoomControl: false,
@@ -18,4 +11,9 @@ export const defaultOptions = {
   fullscreenControl: false,
 }
 
-// это лучше хранить в .env или в файле
+export const containerStyles = {
+  XL: '550x',
+  LG: '500px',
+  MD: '450px',
+  SM: '200px'
+};
