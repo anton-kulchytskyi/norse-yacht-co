@@ -5,6 +5,7 @@ import PhoneNumberSection from '@/components/Contact/PhoneNumberSection';
 import EmailAddressSection from '@/components/Contact/EmailAddressSection';
 import ContactData from '@/lib/contactData/ContactData';
 import Map from '@/components/Map/Map';
+import { containerStyles } from '@/lib/mapConfiguration';
 
 
 const ContactsPage = () => {
@@ -19,7 +20,7 @@ const ContactsPage = () => {
           <EmailAddressSection emailAddress={ContactData.emailAddress} />
         </section>
       </section>
-      <div className={'w-full xl:col-span-2'}>
+      <div className={`w-full h-[${containerStyles.SM}] md:h-[${containerStyles.MD}] xl:h-[${containerStyles.LG}]  xl:col-span-2`}>
         <Map center={ContactData.center} />
       </div>
     </section>

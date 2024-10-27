@@ -16,3 +16,7 @@ const contactData: IContactData = {
 };
 
 export default contactData;
+
+// сделать из адреса обьект
+
+

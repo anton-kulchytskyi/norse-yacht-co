@@ -2,15 +2,13 @@
 
 import { useCallback, useRef } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import { containerStyles, defaultOptions } from '@/lib/mapConfiguration';
-import { useResize } from '@/hooks/useResize';
+import { defaultOptions } from '@/lib/mapConfiguration';
 import { MapSectionProps } from '@/lib/propTypes/ContactPage/MapSectionProps';
 
 
 const Map = ({
   center
 }: MapSectionProps) => {
-  const screen = useResize();
 
   const mapRef = useRef<google.maps.Map | undefined>(undefined);
 
@@ -31,7 +29,7 @@ const Map = ({
     <GoogleMap
       mapContainerStyle={{
         width: '100%',
-        height: containerStyles[screen],
+        height: '100%'
       }}
       center={center}
       zoom={15}
