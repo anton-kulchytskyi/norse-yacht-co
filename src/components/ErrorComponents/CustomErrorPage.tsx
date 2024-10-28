@@ -1,8 +1,11 @@
+import ClickableComponent from '../ClickableComponennt/ClickableComponent';
+
 type CustomErrorPageProps = {
   message: string;
+  onClick: () => void;
 };
 
-const CustomErrorPage = ({ message }: CustomErrorPageProps) => {
+const CustomErrorPage = ({ message, onClick }: CustomErrorPageProps) => {
   return (
     <div className="text-center pb-4">
       <div className="flex justify-center items-baseline">
@@ -19,6 +22,21 @@ const CustomErrorPage = ({ message }: CustomErrorPageProps) => {
       <p className="font-baiJ text-3xl md:text-4xl font-medium mb-6">
         {message}
       </p>
+      <div className="space-x-4">
+        <ClickableComponent
+          type="button"
+          onClick={onClick}
+          variant="secondaryButton"
+        >
+          Try again
+        </ClickableComponent>
+        <ClickableComponent
+          href="/"
+          variant="linkButtonPrimary"
+        >
+          Return to the main page
+        </ClickableComponent>
+      </div>
     </div>
   );
 };

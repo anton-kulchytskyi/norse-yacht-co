@@ -4,14 +4,9 @@ import { ReactNode, useEffect } from 'react';
 type ModalWrapperProps = {
   onClose: () => void;
   children: ReactNode;
-  // contentStyle?: string;
 };
 
-const ModalWrapper = ({
-  onClose,
-  children,
-  // contentStyle = '',
-}: ModalWrapperProps) => {
+const ModalWrapper = ({ onClose, children }: ModalWrapperProps) => {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
