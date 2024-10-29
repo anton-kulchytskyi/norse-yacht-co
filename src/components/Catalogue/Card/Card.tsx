@@ -3,7 +3,6 @@ import { Yacht } from '@/lib/interfaces/yacht.interface';
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import Heart from '@/components//SvgIconsComponents/Heart';
 import CardImg from './CardImg';
-// import YachtName from './YachtName';
 import YachtPrice from './YachtPrice';
 import TopRightLabel from './TopRightLabel';
 
