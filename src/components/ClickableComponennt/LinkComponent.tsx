@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { LinkProps } from '@/lib/interfaces/clickable.interface';
+import { LinkProps } from '@/interfaces/clickable.interface';
 
 const LinkComponent = ({ href, variant, children }: LinkProps) => {
   let linkStyle = '';

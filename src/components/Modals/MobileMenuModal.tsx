@@ -1,4 +1,4 @@
-import { mobileMenuLinks } from '@/lib/links/mobileMenuLinks';
+import { mobileMenuLinks } from '@/data/links/mobileMenuLinks';
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import ModalWrapper from './ModalWrapper';
 
@@ -9,7 +9,10 @@ type MobileMenuModalProps = {
 const MobileMenuModal = ({ onClose }: MobileMenuModalProps) => {
   return (
     <ModalWrapper onClose={onClose}>
-      <ul className="bg-white relative w-full h-full pt-16 xs:pt-28 animate-slide-in-left">
+      <ul
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white relative w-full h-full pt-16 xs:pt-28 animate-slide-in-left"
+      >
         {mobileMenuLinks.map((link, i) => (
           <li
             key={i}

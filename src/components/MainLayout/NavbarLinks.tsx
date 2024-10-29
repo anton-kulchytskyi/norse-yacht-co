@@ -5,11 +5,13 @@ import { useSearchParams } from 'next/navigation';
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import NavbarFooterLogo from '@/components/SvgIconsComponents/NavbarFooterLogo';
 
-import { navbarLeftLinks, navbarRightLinks } from '@/lib/links/navbarLinks';
+import { navbarLeftLinks, navbarRightLinks } from '@/data/links/navbarLinks';
 
+import { useCurrency } from '@/context/CurrencyContext';
 import MenuAndCloseButton from './MenuAndCloseButton';
 
 const NavbarLinks = () => {
+  const { selectedCurrency } = useCurrency();
   const searchParams = useSearchParams();
   const modal = searchParams.get('modal');
 
@@ -53,7 +55,9 @@ const NavbarLinks = () => {
               href={link.href}
               variant={link.variant}
             >
-              {link.text}
+              {link.href === '?modal=currency'
+                ? `${link.text} / ${selectedCurrency}`
+                : link.text}
             </ClickableComponent>
           </li>
         ))}

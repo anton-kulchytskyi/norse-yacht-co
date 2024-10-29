@@ -1,4 +1,4 @@
-import { LinkProps } from '@/lib/interfaces/clickable.interface';
+import { LinkProps } from '@/interfaces/clickable.interface';
 import Heart from '@/components/SvgIconsComponents/Heart';
 import User from '@/components/SvgIconsComponents/User';
 
@@ -31,7 +31,7 @@ export const navbarRightLinks: NavbarLinksArrays[] = [
     variant: 'icon',
   },
   {
-    text: 'Split currency / EUR',
+    text: 'Split currency',
     href: '?modal=currency',
     variant: 'nav',
   },

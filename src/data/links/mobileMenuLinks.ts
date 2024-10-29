@@ -1,4 +1,4 @@
-import { LinkProps } from '@/lib/interfaces/clickable.interface';
+import { LinkProps } from '@/interfaces/clickable.interface';
 
 interface MobileMenuLinksArray extends LinkProps {
   text: string | JSX.Element;

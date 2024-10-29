@@ -1,4 +1,4 @@
-import { LinkProps, ButtonProps } from '@/lib/interfaces/clickable.interface';
+import { LinkProps, ButtonProps } from '@/interfaces/clickable.interface';
 import LinkComponent from './LinkComponent';
 import ButtonComponent from './ButtonComponent';
 
