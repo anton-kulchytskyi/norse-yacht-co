@@ -1,10 +1,14 @@
+import dynamic from 'next/dynamic';
 import { Yacht } from '@/lib/interfaces/yacht.interface';
 
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import Heart from '@/components//SvgIconsComponents/Heart';
-import CardImg from './CardImg';
-import YachtPrice from './YachtPrice';
 import TopRightLabel from './TopRightLabel';
+import CardImg from './CardImg';
+
+const DynamicYachtPrice = dynamic(() => import('./YachtPrice'), {
+  ssr: false,
+});
 
 type CatalogueCardProps = {
   yacht: Yacht;
@@ -67,7 +71,7 @@ const CatalogueCard = async ({ yacht }: CatalogueCardProps) => {
           </ClickableComponent>
         </span>
       </div>
-      <YachtPrice
+      <DynamicYachtPrice
         price={yacht_price}
         old_price={yacht_price_old}
       />
