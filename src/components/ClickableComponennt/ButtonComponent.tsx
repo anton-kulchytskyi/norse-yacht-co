@@ -1,11 +1,10 @@
-import { ButtonProps } from '@/lib/interfaces/clickable.interface';
+import { ButtonProps } from '@/interfaces/clickable.interface';
 
 const ButtonComponent = ({ type, onClick, variant, children }: ButtonProps) => {
   let buttonStyle = '';
   switch (variant) {
     case 'currency':
-      buttonStyle =
-        'flex items-center gap-2 px-4 py-2';
+      buttonStyle = 'flex items-center gap-2 px-4 py-2';
       break;
     case 'secondaryButton':
       buttonStyle =

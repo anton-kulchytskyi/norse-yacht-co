@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { roboto, baiJ, bEs } from '@/lib/fonts/pageFonts';
+import { roboto, baiJ, bEs } from '@/utils/fonts/pageFonts';
 
 import Navbar from '@/components/MainLayout/Navbar';
 import Footer from '@/components/MainLayout/Footer';
 
 import './globals.css';
-import { CurrencyProvider } from '@/utils/context/CurrencyContext';
+import { CurrencyProvider } from '@/context/CurrencyContext';
 
 export const metadata: Metadata = {
   title: 'Norse Yacht Co | Selling yachts from Norway',

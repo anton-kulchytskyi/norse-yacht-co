@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { currencyData } from '@/lib/currencyData';
+import { currencyData } from '@/data/currencyData';
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
-import { useCurrency } from '@/utils/context/CurrencyContext';
+import { useCurrency } from '@/context/CurrencyContext';
 import ModalWrapper from './ModalWrapper';
 
 type CurrencyModalProps = {

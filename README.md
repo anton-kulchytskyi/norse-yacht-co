@@ -1,24 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Norse Yacht Co.
 
-## Getting Started
+This is a collaborative educational project where we are developing a marketplace for yachts from Norway. The project includes a separate backend system and involves a team consisting of developers, a designer, and a tester. Our goal is to learn and apply various skills while creating a functional and user-friendly platform for yacht buyers and sellers.
 
-First, run the development server:
+The front-end of the project is built using Next.js with TypeScript, Tailwind CSS, Ant Design, and integrates images from AWS S3, while maintaining code quality with Prettier, ESLint, and Husky.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Folder Structure](#folder-structure)
+- [License](#license)
+- [Learn More](#learn-more)
+
+## Installation
+
+Instructions on how to install the project.
+
+```bash
+git clone https://github.com/anton-kulchytskyi/norse-yacht-co.git
+cd repo
+npm install
+```
+
+## Usage
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will open your browser at http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To display yacht photos, you need to follow a few simple steps. ⛵
+
+1. Create an `.env.local` file in the project's root directory.
+2. Fill this file with the necessary data.
+
+**You'll get the required data from the repository owner.**
+
+## Folder Structure
+
+src/
+│
+├── app/ # Main application routing, including routing.
+│
+├── components/ # Reusable UI components.
+│
+├── context/ # Context API files for managing global state.
+│
+├── data/ # Static or mock data used for development.
+│
+├── hooks/ # Custom React hooks for encapsulating reusable logic.
+│
+├── interfaces/ # TypeScript interfaces and types for type safety across the application.
+│
+├── public/ # Static assets such as images, fonts, and other files served directly.
+│
+└── utils/ # Utility functions and helper methods used throughout the application.
+
+## License
+
+This project is licensed under the MIT License.
 
 ## Learn More
 
@@ -26,11 +70,3 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

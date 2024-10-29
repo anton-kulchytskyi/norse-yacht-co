@@ -1,4 +1,4 @@
-import { mobileMenuLinks } from '@/lib/links/mobileMenuLinks';
+import { mobileMenuLinks } from '@/data/links/mobileMenuLinks';
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import ModalWrapper from './ModalWrapper';
 
