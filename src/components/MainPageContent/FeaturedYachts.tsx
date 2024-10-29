@@ -1,35 +1,28 @@
-import { Yacht } from '@/interfaces/yacht.interface';
-import { apiClient } from '@/utils/api/apiClient';
-import Card from '../Catalogue/Card/Card';
-import FeaturedYachsSkeleton from '../Skeletons/FeaturedYachsSkeleton';
+import { FeaturedYachtsSectionData } from '@/data/mainPage/FeaturedYachtsSectionData';
+import ClickableComponent from '../ClickableComponennt/ClickableComponent';
+import FeaturedYachtsList from './FeaturedYachtsList';
 
-const FeaturedYachts = async () => {
-  try {
-    const yachts: Yacht[] = await apiClient.getAllYachts('/yachts');
-    yachts.sort(() => Math.random() - 0.5);
-
-    const visibleYachts = yachts.slice(0, 3);
-    return (
-      <>
-        <div className="flex w-full justify-between items-center px-5 md:px-16 py-4 md:py-6 xl:py-8">
-          <div>
-            <h4>FeaturedYachts</h4>
-          </div>
-          <div>see all</div>
+const FeaturedYachts = () => {
+  return (
+    <>
+      <div className="w-full px-5 md:px-16 py-4 md:py-6 xl:py-8">
+        <div className="flex justify-center space-x-3 items-baseline xl:flex-col xl:items-center">
+          <h4>{FeaturedYachtsSectionData.title}</h4>
+          <h5 className="xl:translate-x-20">
+            {FeaturedYachtsSectionData.subtitle}
+          </h5>
         </div>
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 px-5 md:px-16">
-          {visibleYachts.map((yacht) => (
-            <Card
-              key={yacht.yacht_id}
-              yacht={yacht}
-            />
-          ))}
+        <div className="flex justify-end">
+          <ClickableComponent href='/catalogue' variant='text'>
+            {FeaturedYachtsSectionData.button}
+          </ClickableComponent>
         </div>
-      </>
-    );
-  } catch (error) {
-    return <FeaturedYachsSkeleton />;
-  }
+      </div>
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 px-5 md:px-16">
+        <FeaturedYachtsList />
+      </div>
+    </>
+  );
 };
 
 export default FeaturedYachts;

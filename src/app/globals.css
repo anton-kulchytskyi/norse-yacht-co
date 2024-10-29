@@ -23,7 +23,8 @@
     @apply font-baiJ font-semibold text-3xl xl:text-[40px] text-primary;
   }
   h5 {
-    @apply text-7xl font-bEs;
+    @apply text-[80px] xl:text-[100px] font-bEs text-secondary-100;
+    line-height: 20%;
   }
   p {
     @apply text-base;

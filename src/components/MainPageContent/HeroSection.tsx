@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import hero from '@/public/images/hero-img.jpg';
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
+import { HeroSectionData } from '@/data/mainPage/HeroSectionData';
 
 const HeroSection = () => {
   return (
@@ -13,13 +14,13 @@ const HeroSection = () => {
         priority
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h2>Select Your Dream</h2>
-        <h1>Yacht Now</h1>
+        <h2>{HeroSectionData.title}</h2>
+        <h1>{HeroSectionData.subtitle}</h1>
         <ClickableComponent
           href="/catalogue"
           variant="linkButtonPrimary"
         >
-          View Gallery
+          {HeroSectionData.ctaButton}
         </ClickableComponent>
       </div>
     </div>
