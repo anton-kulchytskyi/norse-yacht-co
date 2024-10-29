@@ -17,7 +17,7 @@
     @apply font-baiJ text-4xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[130px] text-primary font-bold;
   }
   h3 {
-    @apply text-6xl font-baiJ;
+    @apply text-xl sm:text-4xl xl:text-6xl 2xl:text-8xl font-semibold font-baiJ;
   }
   h4 {
     @apply font-baiJ font-semibold text-3xl xl:text-[40px] text-primary;
@@ -26,8 +26,12 @@
     @apply text-[80px] xl:text-[100px] font-bEs text-secondary-100;
     line-height: 20%;
   }
+  h6 {
+    @apply text-[56px] sm:text-8xl xl:text-[180px] 2xl:text-[274px] font-bEs text-secondary-100;
+    line-height: 20%;
+  }
   p {
-    @apply text-base;
+    @apply text-base xl:text-2xl xl:leading-9;
   }
   a {
     @apply text-lg font-medium;

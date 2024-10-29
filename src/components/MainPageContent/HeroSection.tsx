@@ -5,7 +5,7 @@ import { HeroSectionData } from '@/data/mainPage/HeroSectionData';
 
 const HeroSection = () => {
   return (
-    <div className="relative h-screen -mt-[54px] md:-mt-[62px] xl:-mt-[70px]">
+    <div className="relative h-screen -mt-[54px] md:-mt-[62px] xl:-mt-[70px] mb-8 sm:mb-10 xl:mb-16 2xl:mb-24">
       <Image
         src={hero}
         alt="Background Image"
