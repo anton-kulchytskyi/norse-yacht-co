@@ -42,23 +42,17 @@ To display yacht photos, you need to follow a few simple steps. ⛵
 
 ## Folder Structure
 
+```bash
 src/
-│
 ├── app/ # Main application routing, including routing.
-│
 ├── components/ # Reusable UI components.
-│
 ├── context/ # Context API files for managing global state.
-│
 ├── data/ # Static or mock data used for development.
-│
 ├── hooks/ # Custom React hooks for encapsulating reusable logic.
-│
 ├── interfaces/ # TypeScript interfaces and types for type safety across the application.
-│
 ├── public/ # Static assets such as images, fonts, and other files served directly.
-│
 └── utils/ # Utility functions and helper methods used throughout the application.
+```
 
 ## License
 
