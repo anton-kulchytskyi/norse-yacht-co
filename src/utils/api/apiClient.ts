@@ -43,5 +43,11 @@ export const apiClient = {
     const data = await request<{ yachts: Yacht[] }>(url);
     return data.yachts;
   },
+  getFeaturedYachts: async (url: string) => {
+    const data = await request<{ yachts: Yacht[] }>(url);
+    return data.yachts.filter(
+      (yacht) => yacht.yacht_top || yacht.yacht_hot_price
+    );
+  },
   getYachtById: <T>(url: string) => request<T>(url),
 };
