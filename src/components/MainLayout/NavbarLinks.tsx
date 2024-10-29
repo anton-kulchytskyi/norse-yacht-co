@@ -5,9 +5,9 @@ import { useSearchParams } from 'next/navigation';
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import NavbarFooterLogo from '@/components/SvgIconsComponents/NavbarFooterLogo';
 
-import { navbarLeftLinks, navbarRightLinks } from '@/lib/links/navbarLinks';
+import { navbarLeftLinks, navbarRightLinks } from '@/data/links/navbarLinks';
 
-import { useCurrency } from '@/utils/context/CurrencyContext';
+import { useCurrency } from '@/context/CurrencyContext';
 import MenuAndCloseButton from './MenuAndCloseButton';
 
 const NavbarLinks = () => {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Yacht } from '@/lib/interfaces/yacht.interface';
+import { Yacht } from '@/interfaces/yacht.interface';
 import { CustomError } from '../error/CustomError';
 import { createHeaders } from './createHeaders';
 

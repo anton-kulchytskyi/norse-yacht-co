@@ -1,4 +1,4 @@
-import { Yacht } from '@/lib/interfaces/yacht.interface';
+import { Yacht } from '@/interfaces/yacht.interface';
 import { apiClient } from '@/utils/api/apiClient';
 import Card from '../Catalogue/Card/Card';
 import FeaturedYachsSkeleton from '../Skeletons/FeaturedYachsSkeleton';

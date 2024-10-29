@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { Yacht } from '@/lib/interfaces/yacht.interface';
+import { Yacht } from '@/interfaces/yacht.interface';
 
 import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
 import Heart from '@/components//SvgIconsComponents/Heart';

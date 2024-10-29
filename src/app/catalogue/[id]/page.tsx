@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { apiClient } from '@/utils/api/apiClient';
-import { YachtDetail } from '@/lib/interfaces/yacht.interface';
+import { YachtDetail } from '@/interfaces/yacht.interface';
 
 type Props = {
   params: {
