@@ -9,6 +9,7 @@ const BlockSectionLogo = ({
   logoSubTxt,
 }: BlockSectionLogoProps) => {
   const color = order ? '#31455B' : '#E7801A';
+  const multiLineText = logoSubTxt.split(' ');
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +23,7 @@ const BlockSectionLogo = ({
         d="M209.797 2H8.203A6.203 6.203 0 0 0 2 8.203v200.594A6.203 6.203 0 0 0 8.203 215h122.931a6.203 6.203 0 0 0 6.203-6.203v-67.765c0-51.724 27.553-99.532 72.308-125.463l3.262-1.89A6.204 6.204 0 0 0 216 8.313v-.11A6.203 6.203 0 0 0 209.797 2Z"
       />
       <text
-        x="10%"
+        x="8%"
         y="45%"
         textAnchor="start"
         fontSize="48"
@@ -31,13 +32,24 @@ const BlockSectionLogo = ({
         {logoTxt}
       </text>
       <text
-        x="10%"
+        x="8%"
         y="65%"
         textAnchor="start"
         fontSize="24"
         className={`font-baiJ ${order ? 'fill-white' : 'fill-primary'} `}
       >
-        {logoSubTxt}
+        <tspan
+          x="8%"
+          dy="0"
+        >
+          {multiLineText[0]}
+        </tspan>
+        <tspan
+          x="8%"
+          dy="30"
+        >
+          {multiLineText[1]}
+        </tspan>
       </text>
       <path
         fill={color}
