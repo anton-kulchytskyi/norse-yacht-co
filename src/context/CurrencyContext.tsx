@@ -33,6 +33,7 @@ export const CurrencyProvider: React.FC<CurrencyProviderProps> = ({
   const LOCAL_STORAGE_CURRENCY_KEY = 'selectedCurrency';
   const LOCAL_STORAGE_CURRENCY_TIME_UPDATE = 'lastUpdate';
   const LOCAL_STORAGE_RATES_KEY = 'currencyRates';
+  const DAY_IN_MILLISECONDS = 24 * 60 * 60;
 
   const [selectedCurrency, setSelectedCurrency] = useLocalStorage<string>(
     LOCAL_STORAGE_CURRENCY_KEY,
@@ -65,7 +66,7 @@ export const CurrencyProvider: React.FC<CurrencyProviderProps> = ({
 
       if (
         !storedLastUpdateDate ||
-        today - storedLastUpdateDate.getTime() >= 86400000
+        today - storedLastUpdateDate.getTime() >= DAY_IN_MILLISECONDS
       ) {
         const response = await fetch(
           'https://api.frankfurter.app/latest?to=USD,GBP,NOK'
