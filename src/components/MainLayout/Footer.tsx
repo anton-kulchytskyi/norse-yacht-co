@@ -1,9 +1,10 @@
 import React from 'react';
-import NavbarFooterLogo from '@/components/SvgIconsComponents/NavbarFooterLogo';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
+import NavbarFooterLogo from '@/components/SvgIcons/NavbarFooterLogo';
+import CopyRight from '@/components/SvgIcons/CopyRight';
+import SocialMedia from '@/components/Shared/SocialMedia';
+
 import { footerLinks } from '@/data/links/footerLinks';
-import ClickableComponent from '../ClickableComponent/ClickableComponent';
-import CopyRight from '../SvgIconsComponents/CopyRight';
-import SocialMedia from '../Shared/SocialMedia';
 
 const Footer = () => {
   return (

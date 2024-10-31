@@ -3,12 +3,12 @@ import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
-import NavbarFooterLogo from '@/components/SvgIconsComponents/NavbarFooterLogo';
-
-import { navbarLeftLinks, navbarRightLinks } from '@/data/links/navbarLinks';
+import NavbarFooterLogo from '@/components/SvgIcons/NavbarFooterLogo';
+import MenuAndCloseButton from './MenuAndCloseButton';
 
 import { useCurrency } from '@/context/CurrencyContext';
-import MenuAndCloseButton from './MenuAndCloseButton';
+
+import { navbarLeftLinks, navbarRightLinks } from '@/data/links/navbarLinks';
 
 const NavbarLinks = () => {
   const { selectedCurrency } = useCurrency();

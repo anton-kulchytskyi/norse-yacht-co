@@ -5,7 +5,6 @@ const useLocalStorage = <T>(key: string, initialValue: T) => {
     try {
       const storedValue =
         typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null;
-      // const value = window.localStorage.getItem(key);
       return storedValue ? JSON.parse(storedValue) : initialValue;
     } catch (error) {
       // eslint-disable-next-line

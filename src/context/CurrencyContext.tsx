@@ -1,7 +1,7 @@
 'use client';
 import React, { createContext, useContext, ReactNode, useEffect } from 'react';
 import { currencyData } from '@/data/currencyData';
-import useLocalStorage from '../hooks/useLocalStorage';
+import useLocalStorage from '@/hooks/useLocalStorage';
 
 type CurrencyContextType = {
   selectedCurrency: string;

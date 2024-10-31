@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import { Yacht } from '@/interfaces/yacht.interface';
 
 import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
-import Heart from '@/components//SvgIconsComponents/Heart';
+import Heart from '@/components/SvgIcons/Heart';
 import TopRightLabel from './TopRightLabel';
 import CardImg from './CardImg';
 

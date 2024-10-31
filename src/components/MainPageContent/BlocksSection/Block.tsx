@@ -1,15 +1,25 @@
 import Image from 'next/image';
-import { BlocksSectionData } from '@/data/mainPage/BlocksSectionData';
-import { BlockSection } from '@/interfaces/blockSection.type';
-import ClickableComponent from '../ClickableComponent/ClickableComponent';
-import BlockSectionLogo from '../SvgIconsComponents/BlockSectionLogo';
+import { StaticImageData } from 'next/image';
+
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
+import BlockSectionLogo from '@/components/SvgIcons/BlockSectionLogo';
+
+interface BlockSection {
+  title: string;
+  titleCursive: string;
+  desc: string;
+  img: StaticImageData;
+  logoTxt: string;
+  logoSubTxt: string;
+  order: boolean;
+};
 
 type BlockProps = {
   data: BlockSection;
 };
 
 const Block = ({ data }: BlockProps) => {
-  const { title, subtitle, desc, img, logoTxt, logoSubTxt, order } = data;
+  const { title, titleCursive, desc, img, logoTxt, logoSubTxt, order } = data;
   return (
     <section
       className={`${order ? 'bg-primary xl:flex-row' : 'bg-white xl:flex-row-reverse'} relative w-full flex flex-col gap-x-8 px-5 md:px-16 py-4 md:py-6 xl:py-8 mb-10 xl:mb-16 2xl:mb-24`}
@@ -21,11 +31,11 @@ const Block = ({ data }: BlockProps) => {
           {order ? (
             <>
               <h3 className="text-white">{title}</h3>
-              <h6>{subtitle}</h6>
+              <h6>{titleCursive}</h6>
             </>
           ) : (
             <>
-              <h6>{subtitle}</h6>
+              <h6>{titleCursive}</h6>
               <h3 className="text-primary">{title}</h3>
             </>
           )}
@@ -65,17 +75,4 @@ const Block = ({ data }: BlockProps) => {
   );
 };
 
-const BlocksSection = () => {
-  return (
-    <>
-      {BlocksSectionData.map((block, i) => (
-        <Block
-          key={i}
-          data={block}
-        />
-      ))}
-    </>
-  );
-};
-
-export default BlocksSection;
+export default Block;

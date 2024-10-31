@@ -1,7 +1,9 @@
-import { Yacht } from '@/interfaces/yacht.interface';
+import Card from '@/components/Catalogue/Card/Card';
+import CardSkeleton from '@/components/Skeletons/CardSkeleton';
+
 import { apiClient } from '@/utils/api/apiClient';
-import Card from '../Catalogue/Card/Card';
-import CardSkeleton from '../Skeletons/CardSkeleton';
+
+import { Yacht } from '@/interfaces/yacht.interface';
 
 const FEATURED_YACHT_COUNT = 3;
 

@@ -1,7 +1,7 @@
-import ClickableComponent from '../ClickableComponent/ClickableComponent';
-import Instagram from '../SvgIconsComponents/Instagram';
-import Telegram from '../SvgIconsComponents/Telegram';
-import WhatsApp from '../SvgIconsComponents/WhatsApp';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
+import Instagram from '@/components/SvgIcons/Instagram';
+import Telegram from '@/components/SvgIcons/Telegram';
+import WhatsApp from '@/components/SvgIcons/WhatsApp';
 
 type Props = {
   color: string;

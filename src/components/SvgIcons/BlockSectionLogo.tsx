@@ -8,7 +8,7 @@ const BlockSectionLogo = ({
   logoTxt,
   logoSubTxt,
 }: BlockSectionLogoProps) => {
-  const color = order ? '#31455B' : '#E7801A';
+  const color = order ? '#31455b' : '#e7801a';
   const multiLineText = logoSubTxt.split(' ');
   return (
     <svg

@@ -1,6 +1,7 @@
+import Heart from '@/components/SvgIcons/Heart';
+import User from '@/components/SvgIcons/User';
+
 import { LinkProps } from '@/interfaces/clickable.interface';
-import Heart from '@/components/SvgIconsComponents/Heart';
-import User from '@/components/SvgIconsComponents/User';
 
 interface NavbarLinksArrays extends LinkProps {
   text: string | JSX.Element;

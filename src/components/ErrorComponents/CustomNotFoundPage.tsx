@@ -1,4 +1,4 @@
-import ClickableComponent from '../ClickableComponent/ClickableComponent';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 
 const CustomNotFoundPage = () => {
   return (
