@@ -1,7 +1,7 @@
 import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
-import ModalWrapper from './ModalWrapper';
 
 import { mobileMenuLinks } from '@/data/links/mobileMenuLinks';
+import ModalWrapper from './ModalWrapper';
 
 type MobileMenuModalProps = {
   onClose: () => void;

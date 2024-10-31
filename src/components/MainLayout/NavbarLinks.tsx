@@ -4,11 +4,12 @@ import { useSearchParams } from 'next/navigation';
 
 import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 import NavbarFooterLogo from '@/components/SvgIcons/NavbarFooterLogo';
-import MenuAndCloseButton from './MenuAndCloseButton';
 
 import { useCurrency } from '@/context/CurrencyContext';
 
 import { navbarLeftLinks, navbarRightLinks } from '@/data/links/navbarLinks';
+
+import MenuAndCloseButton from './MenuAndCloseButton';
 
 const NavbarLinks = () => {
   const { selectedCurrency } = useCurrency();

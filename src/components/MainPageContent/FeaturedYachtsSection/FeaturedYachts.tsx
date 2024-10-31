@@ -1,5 +1,5 @@
-import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 import FeaturedYachtsList from './FeaturedYachtsList';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 
 import { FeaturedYachtsSectionData } from '@/data/mainPage/FeaturedYachtsSectionData';
 

@@ -1,6 +1,6 @@
-import Block from './Block';
-
 import { BlocksSectionData } from '@/data/mainPage/BlocksSectionData';
+
+import Block from './Block';
 
 const BlocksSection = () => {
   return (

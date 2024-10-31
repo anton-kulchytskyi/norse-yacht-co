@@ -1,11 +1,12 @@
 import Image from 'next/image';
 
 import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
-import ModalWrapper from './ModalWrapper';
 
 import { useCurrency } from '@/context/CurrencyContext';
 
 import { currencyData } from '@/data/currencyData';
+
+import ModalWrapper from './ModalWrapper';
 
 type CurrencyModalProps = {
   onClose: () => void;

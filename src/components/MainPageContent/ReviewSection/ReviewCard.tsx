@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-import FiveStars from './FiveStars';
-
 import QuotesImg from '@/public/icons/quotes.svg';
 
 import { ReviewPerson } from '@/interfaces/reviewPerson.interface';
+
+import FiveStars from './FiveStars';
 
 const ReviewCard = ({
   sliderIdx,
