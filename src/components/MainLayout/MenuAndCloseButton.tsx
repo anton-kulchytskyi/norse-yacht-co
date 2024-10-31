@@ -1,7 +1,7 @@
 import { useRouter } from 'next/navigation';
 import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
-import Menu from '@/components/SvgIconsComponents/Menu';
-import Close from '@/components/SvgIconsComponents/Close';
+import Menu from '@/components/SvgIcons/Menu';
+import Close from '@/components/SvgIcons/Close';
 
 type MenuAndCloseButtonProps = {
   modal: string | null;

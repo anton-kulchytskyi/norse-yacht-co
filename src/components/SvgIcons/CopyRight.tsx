@@ -7,7 +7,7 @@ const CopyRight = () => {
       fill="none"
     >
       <path
-        fill="#C6C7CC"
+        fill="#c6c7cc"
         d="M11 7.864h2a2 2 0 0 1 2 2v1h-2v-1h-2v6h2v-1h2v1a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2Zm1-5a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z"
       />
       <text

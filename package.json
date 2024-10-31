@@ -20,7 +20,8 @@
     "@aws-sdk/s3-request-presigner": "^3.676.0",
     "next": "14.2.15",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.2.0",

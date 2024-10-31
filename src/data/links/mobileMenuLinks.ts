@@ -21,7 +21,7 @@ export const mobileMenuLinks: MobileMenuLinksArray[] = [
     variant: 'menu',
   },
   {
-    text: 'Split currency / EUR',
+    text: 'Split currency',
     href: '',
     variant: 'menu',
   },
