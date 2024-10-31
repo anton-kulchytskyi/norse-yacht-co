@@ -1,5 +1,5 @@
 import { FeaturedYachtsSectionData } from '@/data/mainPage/FeaturedYachtsSectionData';
-import ClickableComponent from '../ClickableComponennt/ClickableComponent';
+import ClickableComponent from '../ClickableComponent/ClickableComponent';
 import FeaturedYachtsList from './FeaturedYachtsList';
 
 const FeaturedYachts = () => {

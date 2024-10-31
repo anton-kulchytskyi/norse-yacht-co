@@ -23,4 +23,5 @@ export interface ButtonProps extends Clickable {
 
 export interface LinkProps extends Clickable {
   href: string;
+  target?: string;
 }

@@ -2,7 +2,7 @@
 import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 import NavbarFooterLogo from '@/components/SvgIconsComponents/NavbarFooterLogo';
 
 import { navbarLeftLinks, navbarRightLinks } from '@/data/links/navbarLinks';

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { BlocksSectionData } from '@/data/mainPage/BlocksSectionData';
 import { BlockSection } from '@/interfaces/blockSection.type';
-import ClickableComponent from '../ClickableComponennt/ClickableComponent';
+import ClickableComponent from '../ClickableComponent/ClickableComponent';
 import BlockSectionLogo from '../SvgIconsComponents/BlockSectionLogo';
 
 type BlockProps = {
@@ -45,7 +45,11 @@ const Block = ({ data }: BlockProps) => {
         <span
           className={`hidden xl:flex justify-end ${!order && 'absolute bottom-8 right-16'}`}
         >
-          <BlockSectionLogo order={order} logoTxt={logoTxt} logoSubTxt={logoSubTxt} />
+          <BlockSectionLogo
+            order={order}
+            logoTxt={logoTxt}
+            logoSubTxt={logoSubTxt}
+          />
         </span>
       </div>
       <div className="relative w-full xl:w-1/2 2xl:w-2/3 h-44 sm:h-80 md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[650px]">
@@ -63,14 +67,14 @@ const Block = ({ data }: BlockProps) => {
 
 const BlocksSection = () => {
   return (
-    <div>
+    <>
       {BlocksSectionData.map((block, i) => (
         <Block
           key={i}
           data={block}
         />
       ))}
-    </div>
+    </>
   );
 };
 

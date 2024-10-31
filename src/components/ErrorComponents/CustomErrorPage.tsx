@@ -1,4 +1,4 @@
-import ClickableComponent from '../ClickableComponennt/ClickableComponent';
+import ClickableComponent from '../ClickableComponent/ClickableComponent';
 
 type CustomErrorPageProps = {
   message: string;
