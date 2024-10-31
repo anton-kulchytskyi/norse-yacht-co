@@ -24,7 +24,8 @@ const LinkComponent = ({ href, variant, children }: LinkProps) => {
       linkStyle = 'text-black';
       break;
     case 'footer':
-      linkStyle = 'hover:text-secondary-100 hover:underline transition';
+      linkStyle =
+        'text-white hover:text-secondary-100 hover:underline transition';
       break;
     case 'imgContainer':
       linkStyle = 'relative block w-full h-full';

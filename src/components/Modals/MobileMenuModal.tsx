@@ -1,5 +1,5 @@
 import { mobileMenuLinks } from '@/data/links/mobileMenuLinks';
-import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 import ModalWrapper from './ModalWrapper';
 
 type MobileMenuModalProps = {

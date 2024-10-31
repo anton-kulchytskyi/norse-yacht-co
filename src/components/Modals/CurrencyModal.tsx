@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { currencyData } from '@/data/currencyData';
-import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 import { useCurrency } from '@/context/CurrencyContext';
 import ModalWrapper from './ModalWrapper';
 

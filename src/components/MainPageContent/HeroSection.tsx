@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import hero from '@/public/images/hero-img.jpg';
-import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 import { HeroSectionData } from '@/data/mainPage/HeroSectionData';
 
 const HeroSection = () => {

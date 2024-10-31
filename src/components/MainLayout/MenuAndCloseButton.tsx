@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import ClickableComponent from '@/components/ClickableComponennt/ClickableComponent';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 import Menu from '@/components/SvgIconsComponents/Menu';
 import Close from '@/components/SvgIconsComponents/Close';
 
