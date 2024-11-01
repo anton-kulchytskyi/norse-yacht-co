@@ -33,7 +33,7 @@ const CatalogueCard = async ({ yacht }: CatalogueCardProps) => {
     <div className="hover:shadow-custom hover:rounded-lg hover:scale-105 transition ease duration-1000 group">
       <div className="relative block w-full h-96">
         <ClickableComponent
-          href={`/catalogue/${yacht_id}`}
+          href={`/catalogue/${yacht_id}?name=${yacht_make}_${yacht_model}`}
           variant="imgContainer"
         >
           <CardImg keyImg={yacht_main_image_key} />
@@ -46,7 +46,7 @@ const CatalogueCard = async ({ yacht }: CatalogueCardProps) => {
         </span>
         <span className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition ease duration-1000">
           <ClickableComponent
-            href={`/catalogue/${yacht_id}?name=${yacht_make}`}
+            href={`/catalogue/${yacht_id}?name=${yacht_make}_${yacht_model}`}
             variant="linkButtonPrimary"
           >
             See Detail

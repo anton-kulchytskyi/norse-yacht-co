@@ -3,10 +3,10 @@ import StarImg from '@/public/icons/stars/star.svg';
 import StarEmptyImg from '@/public/icons/stars/star_empty.svg';
 
 const FiveStars = () => {
-  const stars = Array.from({ length: 4 }, () => {
+  const stars = Array.from({ length: 4 }, (_, i) => {
     return (
       <Image
-        key={Math.random()}
+        key={i}
         src={StarImg}
         alt="Star Image"
       />
@@ -19,13 +19,13 @@ const FiveStars = () => {
     <>
       {isFilled ? (
         <Image
-          key={Math.random()}
+          key={4}
           src={StarImg}
           alt="Star Image"
         />
       ) : (
         <Image
-          key={Math.random()}
+          key={5}
           src={StarEmptyImg}
           alt="Star Image"
         />
