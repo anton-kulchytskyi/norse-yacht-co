@@ -10,10 +10,3 @@ export const defaultOptions = {
   disableDoubleClickZoom: false,
   fullscreenControl: false,
 }
-
-export enum containerStyles {
-  XL = '550x',
-  LG = '500px',
-  MD = '450px',
-  SM = '200px'
-}

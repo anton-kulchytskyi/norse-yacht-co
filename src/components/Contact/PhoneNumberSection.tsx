@@ -1,14 +1,15 @@
-import { commonStyles } from '@/components/Contact/common';
-import { PhoneSectionProps } from '@/lib/propTypes/ContactPage/PhoneSectionProps';
+import { ContactSectionContainer } from '@/components/Contact/ContactSectionContainer';
 
 const PhoneNumberSection = ({
   phoneNumber
-}: PhoneSectionProps) => {
+}: {
+  phoneNumber: string;
+}) => {
   return (
-    <article className={commonStyles.container}>
-      <h2 className={commonStyles.subHeader}>Phone number</h2>
+    <ContactSectionContainer>
+      <h2 className={'text-2xl'}>Phone number</h2>
       {phoneNumber}
-    </article>
+    </ContactSectionContainer>
   );
 }
 

@@ -1,16 +1,17 @@
 import React from 'react';
-import { commonStyles } from '@/components/Contact/common';
-import { WorkHoursSectionProps } from '@/lib/propTypes/ContactPage/WorkHoursSectionProps';
+import { ContactSectionContainer } from '@/components/Contact/ContactSectionContainer';
 
 const WorkHoursSection = ({
   workHours
-}: WorkHoursSectionProps) => {
+}: {
+  workHours: Map<string, string>
+}) => {
 
   const keysArr = Array.from(workHours.keys());
 
   return (
-    <article className={commonStyles.container}>
-      <h2 className={commonStyles.subHeader}>Office hours</h2>
+    <ContactSectionContainer>
+      <h2 className={'text-2xl'}>Office hours</h2>
       <ul>
         {
           keysArr.map(key => (
@@ -20,7 +21,7 @@ const WorkHoursSection = ({
           ))
         }
       </ul>
-    </article>
+    </ContactSectionContainer>
   );
 }
 

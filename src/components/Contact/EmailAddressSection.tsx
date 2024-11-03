@@ -1,20 +1,18 @@
-import { commonStyles } from '@/components/Contact/common';
-import { EmailSectionProps } from '@/lib/propTypes/ContactPage/EmailSectionProps';
+import { ContactSectionContainer } from '@/components/Contact/ContactSectionContainer';
 
-const styles = {
-  emailLink: 'underline',
-};
 
 const EmailAddressSection = ({
   emailAddress
-}: EmailSectionProps) => {
+}: {
+  emailAddress: string;
+}) => {
   return (
-    <article className={commonStyles.container}>
-      <h2 className={commonStyles.subHeader}>E-mail address</h2>
-      <a href="mailto:sales@norseyacht.com" className={styles.emailLink}>
+    <ContactSectionContainer>
+      <h2 className='text-2xl'>E-mail address</h2>
+      <a href="mailto:sales@norseyacht.com" className={'underline'}>
         {emailAddress}
       </a>
-    </article>
+    </ContactSectionContainer>
   );
 }
 

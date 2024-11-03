@@ -1,20 +1,18 @@
-import { commonStyles } from '@/components/Contact/common';
-import { AddressSectionProps } from '@/lib/propTypes/ContactPage/AddressSectionProps';
+import { ContactSectionContainer } from '@/components/Contact/ContactSectionContainer';
 
-const styles = {
-  addressContainer: 'break-words whitespace-pre-wrap'
-}
 
 const AddressSection = ({
   address
-}: AddressSectionProps) => {
+}: {
+  address: string;
+}) => {
   return (
-    <article className={commonStyles.container}>
-      <h2 className={commonStyles.subHeader}>Address</h2>
-      <span className={styles.addressContainer}>
+    <ContactSectionContainer>
+      <h2 className={'text-2xl'}>Address</h2>
+      <span className={'break-words whitespace-pre-wrap'}>
         {address}
       </span>
-    </article>
+    </ContactSectionContainer>
   );
 }
 
