@@ -9,7 +9,7 @@ const Catalogue = () => {
         </div>
         <div>Filter & Sorting</div>
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 px-5 md:px-16">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-x-8 gap-y-10 px-5 md:px-16">
         <CatalogueList />
       </div>
     </div>
