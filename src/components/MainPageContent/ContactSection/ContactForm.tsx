@@ -1,4 +1,3 @@
-// components/ContactForm.tsx
 'use client';
 
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -9,7 +8,7 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isDirty },
   } = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
   });
@@ -36,21 +35,22 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-4"
+      className="space-y-4 mt-8"
     >
       <div className="relative">
-        <label
-          htmlFor="name"
-          className="absolute text-sm font-medium text-white"
-        >
-          Your name
-        </label>
         <input
           {...register('name')}
           type="text"
-          className={`mt-1 block w-full bg-transparent border ${errors.name ? 'border-error' : 'border-white'} rounded-md focus:outline-none focus:border-secondary-100`}
+          placeholder=""
+          className={`p-4 block w-full bg-transparent border ${errors.name ? 'border-error' : 'border-white'} rounded-md focus:outline-none focus:border-secondary-100`}
         />
-        {errors.name && (
+        <label
+          htmlFor="name"
+          className="absolute left-4 text-sm font-medium text-white bg-primary transition-all duration-600 ease"
+        >
+          Your name
+        </label>
+        {errors.name && isDirty && (
           <p className="text-error text-sm">{errors.name.message}</p>
         )}
       </div>
