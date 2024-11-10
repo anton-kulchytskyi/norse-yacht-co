@@ -39,11 +39,40 @@
   button {
     @apply text-lg;
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: transparent;
+  }
+
+  input:not(:focus):placeholder-shown + label {
+    @apply top-4;
+  }
+
+  input:not(:focus):not(:placeholder-shown) + label {
+    @apply top-[-0.5rem] scale-75;
+  }
+
+  input:focus + label {
+    @apply top-[-0.5rem] scale-75;
+  }
 }
 
 .highlight-second li:nth-child(2) {
   @apply ml-2;
 }
+
+/* .input:focus + .label {
+  top: 0;
+} */
 
 /* :root {
   --background: #ffffff;

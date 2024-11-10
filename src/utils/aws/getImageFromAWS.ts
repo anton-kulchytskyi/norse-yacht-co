@@ -21,9 +21,13 @@ export async function fetchImgUrl(keyFromAws: string): Promise<string | null> {
     const signedImageUrl = await getSignedUrl(s3, command);
 
     const response = await fetch(signedImageUrl);
-    const contentType = response.headers.get('Content-Type');
+    // console.log(response.status);
+    // const contentType = response.headers.get('Content-Type');
 
-    if (contentType?.startsWith('image/')) {
+    // if (contentType?.startsWith('image/')) {
+    //   return signedImageUrl;
+    // }
+    if (response.status === 200) {
       return signedImageUrl;
     }
 

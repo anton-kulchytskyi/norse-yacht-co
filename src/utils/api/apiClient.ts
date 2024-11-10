@@ -15,6 +15,7 @@ async function request<T>(
     const options: RequestInit = {
       method,
       headers: createHeaders(tokenUser, method),
+      next: { revalidate: 10800 },
     };
 
     if (data) {
@@ -30,7 +31,7 @@ async function request<T>(
       throw new CustomError(responseBody.statusText, responseBody.status);
     }
 
-    return responseBody.json();
+    return url === '/contact' ? responseBody : responseBody.json();
   } catch (error) {
     // eslint-disable-next-line
     console.error('Помилка під час виконання запиту:', error);
@@ -50,4 +51,6 @@ export const apiClient = {
     );
   },
   getYachtById: <T>(url: string) => request<T>(url),
+  sendMessageFromContactForm: <T>(url: string, data: any) =>
+    request<T>(url, data, '', 'POST'),
 };

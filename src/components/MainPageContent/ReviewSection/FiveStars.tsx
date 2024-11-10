@@ -3,7 +3,7 @@ import StarImg from '@/public/icons/stars/star.svg';
 import StarEmptyImg from '@/public/icons/stars/star_empty.svg';
 
 const FiveStars = () => {
-  const stars = Array.from({ length: 4 }, (_, i) => {
+  const stars = Array.from({ length: 5 }, (_, i) => {
     return (
       <Image
         key={i}
@@ -15,23 +15,15 @@ const FiveStars = () => {
 
   const isFilled = Math.random() < 0.8;
 
-  stars.push(
-    <>
-      {isFilled ? (
-        <Image
-          key={4}
-          src={StarImg}
-          alt="Star Image"
-        />
-      ) : (
-        <Image
-          key={5}
-          src={StarEmptyImg}
-          alt="Star Image"
-        />
-      )}
-    </>
-  );
+  if (isFilled) {
+    stars[stars.length - 1] = (
+      <Image
+        key={5}
+        src={StarEmptyImg}
+        alt="Star Image"
+      />
+    );
+  }
 
   return <div className="flex gap-1">{stars}</div>;
 };

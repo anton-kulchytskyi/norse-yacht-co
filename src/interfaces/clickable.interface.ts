@@ -18,7 +18,8 @@ interface Clickable {
 
 export interface ButtonProps extends Clickable {
   type: 'button' | 'submit' | 'reset' | undefined;
-  onClick: () => void;
+  disabled?: boolean | undefined;
+  onClick?: () => void;
 }
 
 export interface LinkProps extends Clickable {
