@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import contact from '@/public/images/contact-img.png';
+import { ContactSectionData } from '@/data/mainPage/ContactSection';
 import ContactForm from './ContactForm';
-import ContactFormik from './ContactFormik';
 
 const ContactSection = () => {
   const dark = true;
@@ -16,23 +16,10 @@ const ContactSection = () => {
         />
       </div>
       <div className="bg-primary px-5 py-8 sm:px-8 md:px-32 xl:px-8 2xl:px-16 3xl:px-40">
-        <h4 className="text-white text-center xl:text-left pt-10">
-          Have Questions? Contact Us
+        <h4 className="text-white text-center xl:text-left pt-10 mb-8">
+          {ContactSectionData.title}
         </h4>
-        <ContactForm />
-      </div>
-
-      <div className="bg-primary px-5 py-8 sm:px-8 md:px-32 xl:px-8 2xl:px-16 3xl:px-40">
-        <h4 className="text-white text-center xl:text-left pt-10">
-          Have Questions? Contact Us
-        </h4>
-        <ContactFormik dark={dark} />
-      </div>
-      <div className="px-5 py-8 sm:px-8 md:px-32 xl:px-8 2xl:px-16 3xl:px-40">
-        <h4 className="text-primary text-center xl:text-left pt-10">
-          Have Questions? Contact Us
-        </h4>
-        <ContactFormik />
+        <ContactForm dark={dark} />
       </div>
     </section>
   );

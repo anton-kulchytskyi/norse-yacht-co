@@ -1,3 +1,4 @@
+import { FormikErrors } from 'formik';
 import * as Yup from 'yup';
 
 export const formikSchema = Yup.object().shape({
@@ -18,4 +19,20 @@ export const formikSchema = Yup.object().shape({
     .required('The message field is required'),
 });
 
+export type ExtendedFormikErrors<T> = FormikErrors<T> & {
+  serverError?: string; // Додаємо поле serverError
+};
+
 export type FormikSchema = Yup.InferType<typeof formikSchema>;
+
+// interface ExtendedFormikError extends FormikErrors<FormikSchema> {
+//   serverError?: string; // Додаємо поле для помилки з сервера
+// }
+
+// export interface ExtendedFormikHelpers extends FormikHelpers<FormikSchema> {
+//   serverError?: string; // Додаємо optional submit property
+// }
+
+// export type ExtendedFormikSchema = FormikSchema & {
+//   submit?: string; // Додаємо опціональне поле submit
+// };

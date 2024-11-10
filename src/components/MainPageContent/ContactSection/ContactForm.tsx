@@ -1,101 +1,69 @@
 'use client';
+import { Formik, Form, FormikHelpers } from 'formik';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { formikSchema, FormikSchema } from '@/lib/validation/formikSchema';
+import InputContainer from '@/components/Shared/InputContainer';
+import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
+import ContactFormModal from '@/components/Modals/ContactFormModal';
+import { handleSubmit } from '@/utils/contactForm/handleSubmit';
+import { ContactSectionData } from '@/data/mainPage/ContactSection';
 
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { formSchema, FormSchema } from '@/lib/validation/formSchema';
+type ContactFormikProps = {
+  dark?: boolean;
+};
 
-const ContactForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting, isDirty },
-  } = useForm<FormSchema>({
-    resolver: zodResolver(formSchema),
-  });
-
-  const onSubmit: SubmitHandler<FormSchema> = async (data) => {
-    // Виклик серверної дії для обробки даних
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      // Обробка успішної відповіді
-      alert('Повідомлення надіслано!');
-    } else {
-      // Обробка помилки
-      alert('Сталася помилка при надсиланні повідомлення.');
-    }
+const ContactForm = ({ dark }: ContactFormikProps) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const modal = searchParams.get('modal');
+  const closeModal = () => {
+    router.back();
   };
-
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="space-y-4 mt-8"
-    >
-      <div className="relative">
-        <input
-          {...register('name')}
-          type="text"
-          placeholder=""
-          className={`p-4 block w-full bg-transparent border ${errors.name ? 'border-error' : 'border-white'} rounded-md focus:outline-none focus:border-secondary-100`}
-        />
-        <label
-          htmlFor="name"
-          className="absolute left-4 text-sm font-medium text-white bg-primary transition-all duration-600 ease"
-        >
-          Your name
-        </label>
-        {errors.name && isDirty && (
-          <p className="text-error text-sm">{errors.name.message}</p>
-        )}
-      </div>
-
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
-        >
-          E-mail
-        </label>
-        <input
-          {...register('userEmail')}
-          type="email"
-          className={`mt-1 block w-full border ${errors.userEmail ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:ring focus:ring-indigo-500`}
-        />
-        {errors.userEmail && (
-          <p className="text-red-500 text-sm">{errors.userEmail.message}</p>
-        )}
-      </div>
-
-      <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Message
-        </label>
-        <textarea
-          {...register('message')}
-          className={`mt-1 block w-full border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:ring focus:ring-indigo-500`}
-        />
-        {errors.message && (
-          <p className="text-red-500 text-sm">{errors.message.message}</p>
-        )}
-      </div>
-
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700"
+    <>
+      <Formik
+        initialValues={{
+          name: '',
+          userEmail: '',
+          message: '',
+        }}
+        validationSchema={formikSchema}
+        onSubmit={async (
+          values,
+          helpers: FormikHelpers<FormikSchema & { serverError?: string }>
+        ) => {
+          await handleSubmit(values, helpers, router, pathname);
+        }}
       >
-        {isSubmitting ? 'Надсилання...' : 'Надіслати'}
-      </button>
-    </form>
+        {({ values, errors, touched, isValid, dirty }) => (
+          <Form>
+            {Object.keys(values).map((inputName) => (
+              <InputContainer
+                key={inputName}
+                inputName={inputName}
+                error={errors[inputName as keyof FormikSchema]}
+                isTouched={touched[inputName as keyof FormikSchema]}
+                dark={dark}
+              />
+            ))}
+
+            {errors.serverError && (
+              <div className="text-error mb-3">{errors.serverError}</div>
+            )}
+
+            <ClickableComponent
+              type="submit"
+              disabled={!(isValid && dirty)}
+              variant="secondaryButton"
+            >
+              {ContactSectionData.button}
+            </ClickableComponent>
+          </Form>
+        )}
+      </Formik>
+      {modal === 'contact' && <ContactFormModal onClose={closeModal} />}
+    </>
   );
 };
 

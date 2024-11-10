@@ -8,7 +8,10 @@ import { FreeMode, Navigation } from 'swiper/modules';
 
 import { ReviewPerson } from '@/interfaces/reviewPerson.interface';
 
-import { reviewUsersArray } from '@/data/mainPage/ReviewSectionData';
+import {
+  reviewSectionTitle,
+  reviewUsersArray,
+} from '@/data/mainPage/ReviewSectionData';
 
 const DynamicReviewCard = dynamic(() => import('./ReviewCard'), {
   ssr: false,
@@ -17,7 +20,7 @@ const DynamicReviewCard = dynamic(() => import('./ReviewCard'), {
 const ReviewsSection = () => {
   return (
     <section className="w-full space-y-8 px-5 md:px-16 py-4 md:py-6 xl:py-8 mb-10 xl:mb-16 2xl:mb-24">
-      <h3 className="">Reviews</h3>
+      <h3 className="">{reviewSectionTitle}</h3>
       <Swiper
         navigation={{
           nextEl: '.swiper_next',

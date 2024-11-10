@@ -71,3 +71,5 @@ export const reviewUsersArray: ReviewPerson[] = usersData.map((user, i) => {
     date: date(),
   };
 });
+
+export const reviewSectionTitle = 'Review';

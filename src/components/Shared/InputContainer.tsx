@@ -40,7 +40,7 @@ const InputContainer = ({
   };
 
   return (
-    <div className="relative">
+    <div className="relative mb-3">
       <Field
         name={inputName}
         type={inputType()}
