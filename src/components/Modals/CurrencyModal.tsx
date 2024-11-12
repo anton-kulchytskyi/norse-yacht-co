@@ -29,7 +29,7 @@ const CurrencyModal = ({ onClose }: CurrencyModalProps) => {
         {currencyData.map((currency) => (
           <li
             key={currency.currencyName}
-            className={`mb-4 last:mb-0 border border-transparent ${selectedCurrency === currency.currencyName && 'border-b-secondary-100 rounded-none'} hover:border-b-primary`}
+            className={`mb-4 last:mb-0 border border-transparent ${selectedCurrency.name === currency.currencyName && 'border-b-secondary-100 rounded-none'} hover:border-b-primary`}
           >
             <ClickableComponent
               type="button"

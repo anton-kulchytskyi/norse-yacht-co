@@ -1,20 +1,19 @@
 'use client';
-import CustomErrorPage from '@/components/ErrorComponents/CustomErrorPage';
-import { CustomError } from '@/utils/error/CustomError';
+import CustomErrorHandler from '@/components/ErrorComponents/CustomErrorHandler';
+import { CustomErrorClass } from '@/utils/error/CustomErrorClass';
 
 export default function Error({
   error,
   reset,
 }: {
-  error: CustomError;
+  error: CustomErrorClass;
   reset: () => void;
 }) {
   return (
-    <div className="text-center">
-      <CustomErrorPage
-        message={error.message}
-        onClick={() => reset()}
-      />
-    </div>
+    <CustomErrorHandler
+      message={error.message}
+      code={error.statusCode || 500}
+      onClick={() => reset()}
+    />
   );
 }

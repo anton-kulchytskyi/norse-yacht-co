@@ -11,19 +11,21 @@ const priceToRender = (price: number, currRate = 1): string => {
 };
 
 const YachtPrice = ({ price, old_price }: YachtPriceProps) => {
-  const { selectedCurrency, selectedCurrencySymbol, currencyRates } =
-    useCurrency();
+  const { selectedCurrency, currencyRates } = useCurrency();
   const showOldPrice = +old_price > +price;
-  const updatePrice = priceToRender(+price, currencyRates[selectedCurrency]);
+  const updatePrice = priceToRender(
+    +price,
+    currencyRates[selectedCurrency.name]
+  );
   const updatePriceOld = priceToRender(
     +old_price,
-    currencyRates[selectedCurrency]
+    currencyRates[selectedCurrency.name]
   );
   return (
     <span className="text-secondary-100 text-xl font-medium md:text-3xl">
-      {`${selectedCurrencySymbol} ${updatePrice}`}
+      {`${selectedCurrency.symbol} ${updatePrice}`}
       {showOldPrice && (
-        <span className="ml-4 text-2xl line-through text-grey-80">{`${selectedCurrencySymbol} ${updatePriceOld}`}</span>
+        <span className="ml-4 text-2xl line-through text-grey-80">{`${selectedCurrency.symbol} ${updatePriceOld}`}</span>
       )}
     </span>
   );

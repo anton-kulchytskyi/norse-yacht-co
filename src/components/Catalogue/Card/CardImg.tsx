@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { fetchImgUrl } from '@/utils/aws/getImageFromAWS';
+
 const IMAGE_600_400 = 'https://fakeimg.pl/600x400?text=Norse+Yacht+Co.';
 
 type CardImgProps = {

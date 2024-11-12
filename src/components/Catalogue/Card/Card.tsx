@@ -3,8 +3,8 @@ import { Yacht } from '@/interfaces/yacht.interface';
 
 import ClickableComponent from '@/components/ClickableComponent/ClickableComponent';
 import Heart from '@/components/SvgIcons/Heart';
-import TopRightLabel from './TopRightLabel';
 import CardImg from './CardImg';
+import TopRightLabel from './TopRightLabel';
 
 const DynamicYachtPrice = dynamic(() => import('./YachtPrice'), {
   ssr: false,

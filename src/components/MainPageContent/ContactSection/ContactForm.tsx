@@ -48,10 +48,6 @@ const ContactForm = ({ dark }: ContactFormikProps) => {
               />
             ))}
 
-            {errors.serverError && (
-              <div className="text-error mb-3">{errors.serverError}</div>
-            )}
-
             <ClickableComponent
               type="submit"
               disabled={!(isValid && dirty)}
@@ -59,6 +55,12 @@ const ContactForm = ({ dark }: ContactFormikProps) => {
             >
               {ContactSectionData.button}
             </ClickableComponent>
+
+            {errors.serverError ? (
+              <div className="text-error text-sm">{errors.serverError}</div>
+            ) : (
+              <div className="h-5" />
+            )}
           </Form>
         )}
       </Formik>

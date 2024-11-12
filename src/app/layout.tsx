@@ -4,8 +4,9 @@ import { roboto, baiJ, bEs } from '@/utils/fonts/pageFonts';
 import Navbar from '@/components/MainLayout/Navbar';
 import Footer from '@/components/MainLayout/Footer';
 
-import './globals.css';
 import { CurrencyProvider } from '@/context/CurrencyContext';
+
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Norse Yacht Co | Selling yachts from Norway',

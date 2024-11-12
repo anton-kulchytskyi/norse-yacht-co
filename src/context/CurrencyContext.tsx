@@ -4,8 +4,7 @@ import { currencyData } from '@/data/currencyData';
 import useLocalStorage from '@/hooks/useLocalStorage';
 
 type CurrencyContextType = {
-  selectedCurrency: string;
-  selectedCurrencySymbol: string;
+  selectedCurrency: { [key: string]: string };
   currencyRates: { [key: string]: number };
   setCurrency: (currency: string) => void;
   updateCurrencyRates: () => Promise<void>;
@@ -35,23 +34,16 @@ export const CurrencyProvider: React.FC<CurrencyProviderProps> = ({
   const LOCAL_STORAGE_RATES_KEY = 'currencyRates';
   const DAY_IN_MILLISECONDS = 24 * 60 * 60;
 
-  const [selectedCurrency, setSelectedCurrency] = useLocalStorage<string>(
-    LOCAL_STORAGE_CURRENCY_KEY,
-    'EUR'
-  );
+  const [selectedCurrency, setSelectedCurrency] = useLocalStorage<{
+    [key: string]: string;
+  }>(LOCAL_STORAGE_CURRENCY_KEY, { name: 'EUR', symbol: '€' });
 
-  const [selectedCurrencySymbol, setSelectedCurrencySymbol] =
-    useLocalStorage<string>(
-      'selectedCurrencySymbol',
-      currencySymbols[selectedCurrency]
-    );
   const [currencyRates, setCurrencyRates] = useLocalStorage<{
     [key: string]: number;
   }>(LOCAL_STORAGE_RATES_KEY, {});
 
   const setCurrency = (currency: string) => {
-    setSelectedCurrency(currency);
-    setSelectedCurrencySymbol(currencySymbols[currency]);
+    setSelectedCurrency({ name: currency, symbol: currencySymbols[currency] });
   };
 
   const [lastUpdate, setLastUpdate] = useLocalStorage<string>(
@@ -97,7 +89,6 @@ export const CurrencyProvider: React.FC<CurrencyProviderProps> = ({
     <CurrencyContext.Provider
       value={{
         selectedCurrency,
-        selectedCurrencySymbol,
         currencyRates,
         setCurrency,
         updateCurrencyRates,

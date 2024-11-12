@@ -20,7 +20,7 @@ const NavbarLinks = () => {
     <>
       <ul className="flex justify-start">
         <li className="mr-3 flex xl:hidden">
-          <Suspense fallback={<p>loading ...</p>}>
+          <Suspense fallback={null}>
             <MenuAndCloseButton modal={modal} />
           </Suspense>
         </li>
@@ -57,7 +57,7 @@ const NavbarLinks = () => {
               variant={link.variant}
             >
               {link.href === '?modal=currency'
-                ? `${link.text} / ${selectedCurrency}`
+                ? `${link.text} / ${selectedCurrency.name}`
                 : link.text}
             </ClickableComponent>
           </li>

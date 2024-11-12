@@ -35,7 +35,7 @@ const LinkComponent = ({ href, variant, children }: LinkProps) => {
         'font-baiJ text-2xl sm:text-4xl hover:text-secondary-100 hover:underline';
       break;
     case 'icon':
-      linkStyle = 'hover:scale-125 transition';
+      linkStyle = 'hover:scale-110 hover:text-secondary-100 transition';
       break;
     default:
       linkStyle = '';

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Yacht } from '@/interfaces/yacht.interface';
-import { CustomError } from '../error/CustomError';
+import { CustomErrorClass } from '../error/CustomErrorClass';
 import { createHeaders } from './createHeaders';
 
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
@@ -28,10 +28,12 @@ async function request<T>(
     );
 
     if (!responseBody.ok) {
-      throw new CustomError(responseBody.statusText, responseBody.status);
+      throw new CustomErrorClass(responseBody.statusText, responseBody.status);
     }
 
-    return url === '/contact' ? responseBody : responseBody.json();
+    return url === '/contact'
+      ? (responseBody as unknown as T)
+      : responseBody.json();
   } catch (error) {
     // eslint-disable-next-line
     console.error('Помилка під час виконання запиту:', error);

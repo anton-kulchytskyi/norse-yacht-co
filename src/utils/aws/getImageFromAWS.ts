@@ -1,6 +1,6 @@
 import { GetObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-import { CustomError } from '../error/CustomError';
+import { CustomErrorClass } from '@/utils/error/CustomErrorClass';
 
 const s3 = new S3Client({
   region: process.env.NEXT_PUBLIC_AWS_REGION as string,
@@ -21,19 +21,14 @@ export async function fetchImgUrl(keyFromAws: string): Promise<string | null> {
     const signedImageUrl = await getSignedUrl(s3, command);
 
     const response = await fetch(signedImageUrl);
-    // console.log(response.status);
-    // const contentType = response.headers.get('Content-Type');
 
-    // if (contentType?.startsWith('image/')) {
-    //   return signedImageUrl;
-    // }
     if (response.status === 200) {
       return signedImageUrl;
     }
 
-    throw new CustomError('Invalid image URL', 400);
+    throw new CustomErrorClass('Invalid image URL', response.status);
   } catch (err) {
-    if (err instanceof CustomError) {
+    if (err instanceof CustomErrorClass) {
       // eslint-disable-next-line
       console.error(err.message);
       return null;
