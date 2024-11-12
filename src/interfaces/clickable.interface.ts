@@ -13,7 +13,8 @@ interface Clickable {
     | 'imgContainer'
     | 'yachtName'
     | 'currency'
-    | 'secondaryButton';
+    | 'secondaryButton'
+    | 'emailAddress';
 }
 
 export interface ButtonProps extends Clickable {

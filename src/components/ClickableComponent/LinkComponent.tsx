@@ -37,6 +37,9 @@ const LinkComponent = ({ href, variant, children }: LinkProps) => {
     case 'icon':
       linkStyle = 'hover:scale-110 hover:text-secondary-100 transition';
       break;
+    case 'emailAddress':
+      linkStyle = 'underline';
+      break;
     default:
       linkStyle = '';
   }
